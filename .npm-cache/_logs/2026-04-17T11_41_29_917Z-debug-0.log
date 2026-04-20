@@ -1,0 +1,29 @@
+0 verbose cli /usr/local/bin/node /usr/local/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.15.0
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/rupamkumarsarangi/Desktop/ Vispera/.npmrc
+5 silly config load:file:/Users/rupamkumarsarangi/.npmrc
+6 verbose config error loading user config Error: EPERM: operation not permitted, open '/Users/rupamkumarsarangi/.npmrc'
+6 verbose config     at async open (node:internal/fs/promises:633:25)
+6 verbose config     at async readFile (node:internal/fs/promises:1237:14)
+6 verbose config     at async #loadFile (/usr/local/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:589:5)
+6 verbose config     at async Config.load (/usr/local/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:250:5)
+6 verbose config     at async #load (/usr/local/lib/node_modules/npm/lib/npm.js:98:5)
+6 verbose config     at async Npm.load (/usr/local/lib/node_modules/npm/lib/npm.js:80:14)
+6 verbose config     at async module.exports (/usr/local/lib/node_modules/npm/lib/cli/entry.js:42:37) {
+6 verbose config   errno: -1,
+6 verbose config   code: 'EPERM',
+6 verbose config   syscall: 'open',
+6 verbose config   path: '/Users/rupamkumarsarangi/.npmrc'
+6 verbose config }
+7 silly config load:file:/usr/local/etc/npmrc
+8 verbose title npm exec create-vite@latest ./ --template react
+9 verbose argv "exec" "--yes" "--" "create-vite@latest" "./" "--template" "react"
+10 verbose logfile logs-max:10 dir:/Users/rupamkumarsarangi/Desktop/ Vispera/.npm-cache/_logs/2026-04-17T11_41_29_917Z-
+11 verbose logfile /Users/rupamkumarsarangi/Desktop/ Vispera/.npm-cache/_logs/2026-04-17T11_41_29_917Z-debug-0.log
+12 silly logfile done cleaning log files
+13 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+14 http fetch GET 200 https://registry.npmjs.org/create-vite 254ms (cache revalidated)
+15 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+16 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
