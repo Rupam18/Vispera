@@ -1,78 +1,74 @@
 import { motion } from "framer-motion";
 import leftImg from "../../assets/images/Group-39917.png";
-import rightImg from "../../assets/images/Group-39731.png";
 
 export default function AboutIntro() {
   return (
-    <section className="py-20 md:py-28" style={{ backgroundColor: "#F7F5F2" }}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-0">
-
-          {/* Left — Group-39917 */}
+    <section className="py-8 md:py-12 overflow-hidden" style={{ backgroundColor: "#F7F5F2" }}>
+      <div className="max-w-[1240px] mx-auto px-6">
+        
+        {/* Tablet/Desktop: Side-by-Side | Mobile: Stacked */}
+        <div className="flex flex-col md:flex-row items-center md:items-stretch md:justify-center gap-8 md:gap-16">
+          
+          {/* Left: Floating Circular Composition */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="w-full lg:w-[32%] shrink-0"
+            className="relative w-full max-w-[280px] md:max-w-[380px] lg:max-w-[460px] shrink-0"
           >
-            <img
+             {/* Artistic blob background */}
+             <div 
+               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-30 pointer-events-none"
+               style={{
+                 background: "radial-gradient(circle, #5EA4A4 0%, transparent 70%)",
+                 filter: "blur(40px)",
+                 borderRadius: "50%"
+               }}
+             />
+             
+             <img
               src={leftImg}
               alt="Creative workspace"
-              className="w-full h-auto object-contain"
+              className="relative z-10 w-full h-auto object-contain"
             />
           </motion.div>
 
-          {/* Center text */}
+          {/* Right: Narrative Content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="w-full lg:w-[42%] shrink-0 px-0 lg:px-10 text-center"
-          >
-            <h2
-              className="font-heading font-bold leading-tight mb-5"
-              style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)", color: "#0A374C" }}
-            >
-              " We believe every story{" "}
-              <span style={{ color: "#5EA4A4" }}>deserves to be told "</span>
-            </h2>
-
-            <p className="text-sm md:text-base leading-relaxed mb-3" style={{ color: "#1a1a1a" }}>
-              <strong>Welcome To Vispera Studios Private Limited</strong>, Where Ideas
-              Transform Into Powerful Stories.
-            </p>
-
-            <p className="text-sm leading-relaxed mb-8" style={{ color: "#666" }}>
-              We Are A Passionate Team Of Storytellers, Filmmakers,
-              Designers, And Digital Experts, Helping Startups, Businesses,
-              And Organizations Craft Their Digital Identity Through Stunning
-              Visuals And Authentic Narratives.
-            </p>
-
-            <a
-              href="#"
-              className="inline-block text-white text-sm font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:opacity-90"
-              style={{ backgroundColor: "#5EA4A4" }}
-            >
-              Learn More
-            </a>
-          </motion.div>
-
-          {/* Right — Group-39731 */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full lg:w-[26%] shrink-0 flex justify-center lg:justify-end"
+            className="flex-1 flex flex-col text-center md:text-left pt-2 md:pt-4 md:justify-between"
           >
-            <img
-              src={rightImg}
-              alt="Portfolio"
-              className="w-48 md:w-56 lg:w-full h-auto object-contain"
-            />
+            <div>
+              <h2
+                className="font-heading font-bold leading-tight mb-4 md:mb-5"
+                style={{ fontSize: "clamp(1.5rem, 4vw, 2.5rem)", color: "#0A374C" }}
+              >
+                " We believe every story <br className="hidden xl:block" />
+                <span className="text-[#5EA4A4]">deserves to be told "</span>
+              </h2>
+
+              <div className="space-y-2 md:space-y-3 max-w-xl mx-auto md:mx-0">
+                <p className="text-sm md:text-base lg:text-lg leading-relaxed text-[#0A374C] font-semibold">
+                  Welcome To <span className="text-[#0A374C]">Vispera Studios Private Limited</span>, <span className="font-normal text-[#0A374C]/80">Where Ideas Transform Into Powerful Stories.</span>
+                </p>
+
+                <p className="text-[12px] md:text-[13px] lg:text-sm leading-relaxed text-[#0A374C]/60 font-medium">
+                  We Are A Passionate Team Of Storytellers, Filmmakers, Designers, And Digital Experts, Helping Startups, Businesses, And Organizations Craft Their Digital Identity Through Stunning Visuals And Authentic Narratives.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 md:mt-0">
+              <a
+                href="#"
+                className="inline-block text-white text-[12px] font-bold tracking-widest px-10 py-3.5 rounded-full transition-all duration-300 hover:scale-105 shadow-md"
+                style={{ backgroundColor: "#5EA4A4" }}
+              >
+                Learn More
+              </a>
+            </div>
           </motion.div>
 
         </div>

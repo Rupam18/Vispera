@@ -15,8 +15,8 @@ export default function CTA() {
         <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
       </div>
 
-      <div className="container-custom relative z-10 text-center md:text-left">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+      <div className="w-full relative z-10 px-8 md:px-16 lg:px-24">
+        <div className="max-w-7xl flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
           
           {/* Camera Illustration Area */}
           <motion.div 

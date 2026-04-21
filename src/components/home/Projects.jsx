@@ -112,22 +112,27 @@ export default function Projects() {
       <section id="work" className="bg-bg-light overflow-hidden py-8 md:py-10">
         <div className="w-full px-6 md:px-12 lg:px-16">
           {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-20 px-4 md:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 px-4 md:px-8">
             <div className="space-y-4">
               <p className="text-[#5EA4A4] font-bold tracking-[0.4em] text-[10px] md:text-sm uppercase">OUR WORK</p>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#0A374C] font-heading leading-tight italic">
-                Stories We've Told
-              </h2>
+              <div className="relative inline-block">
+                <h2 className="text-4xl md:text-5xl font-bold text-[#0A374C] font-heading leading-tight italic relative z-10">
+                  Stories We've Told
+                </h2>
+                <div className="absolute -top-1 -right-8 w-12 h-12 opacity-80 z-0">
+                   <img src={headingBg} alt="" className="w-full h-full object-contain" />
+                </div>
+              </div>
             </div>
             
             {/* Filter tabs */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-2">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-8 py-3 rounded-full text-[13px] font-bold tracking-wide transition-all duration-300 ${activeCategory === cat
-                    ? "bg-[#0A374C] text-white shadow-2xl scale-105"
+                  className={`px-4 py-2 rounded-full text-xs font-bold tracking-wide transition-all duration-300 ${activeCategory === cat
+                    ? "bg-[#0A374C] text-white shadow-lg"
                     : "bg-white text-gray-400 border border-gray-100 hover:border-[#5EA4A4] hover:text-[#5EA4A4]"
                     }`}
                 >
@@ -138,7 +143,7 @@ export default function Projects() {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {filtered.map((project, index) => (
               <motion.div
                 key={project.id}

@@ -39,8 +39,8 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop nav links */}
-          <div className="hidden md:flex items-center gap-7 lg:gap-10">
+          {/* Desktop nav links — hidden on tablet, show on lg+ */}
+          <div className="hidden lg:flex items-center gap-7 lg:gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -59,7 +59,7 @@ export default function Navbar() {
           {/* CTA button */}
           <Link
             to="/contact"
-            className="hidden md:inline-block text-white font-bold rounded-lg transition-all duration-300 hover:opacity-90 shadow-sm"
+            className="hidden lg:inline-block text-white font-bold rounded-lg transition-all duration-300 hover:opacity-90 shadow-sm"
             style={{
               backgroundColor: "#0A374C",
               fontSize: "13px",
@@ -70,9 +70,9 @@ export default function Navbar() {
             Start Your Project
           </Link>
 
-          {/* Mobile toggle */}
+          {/* Mobile/Tablet toggle — visible below lg */}
           <button
-            className="md:hidden text-[#0A374C] p-2"
+            className="lg:hidden text-[#0A374C] p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -87,7 +87,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="absolute top-full left-0 w-full bg-white shadow-lg px-6 py-5 md:hidden"
+            className="absolute top-full left-0 w-full bg-white shadow-lg px-6 py-5 lg:hidden"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (

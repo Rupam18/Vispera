@@ -18,10 +18,10 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-10 md:py-12" style={{ backgroundColor: "#F7F5F2" }}>
+    <section id="services" className="py-4 md:py-6" style={{ backgroundColor: "#F7F5F2" }}>
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="flex flex-col items-center mb-10 relative">
+        <div className="flex flex-col items-center mb-6 relative">
           <p className="text-[#5EA4A4] font-bold tracking-[0.3em] text-[10px] md:text-xs uppercase mb-2">OUR SERVICES</p>
           <div className="relative">
             <motion.h2
@@ -32,14 +32,14 @@ export default function Services() {
             >
               How We Help
             </motion.h2>
-            <div className="absolute -top-6 -right-12 w-20 h-20 opacity-80 z-0">
+            <div className="absolute -top-2 -right-6 w-12 h-12 opacity-80 z-0">
                <img src={headingBg} alt="" className="w-full h-full object-contain" />
             </div>
           </div>
         </div>
 
-        {/* Row 1 — 4 cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-5">
+        {/* Row 1 — 4 cards in one line */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
           {services.slice(0, 4).map((s, i) => (
             <ServiceCard key={s.id} service={s} delay={i * 0.08} />
           ))}

@@ -69,18 +69,18 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* ── Right image (Polaroid Group) ── */}
+          {/* ── Right image (Polaroid Group) — hidden on tablet and mobile ── */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, x: 50 }}
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="w-full lg:w-[35%] flex-shrink-0 flex justify-center lg:justify-end"
+            className="hidden lg:flex w-full lg:w-[35%] flex-shrink-0 justify-center lg:justify-end"
           >
             <img
               src={rightImg}
               alt="Portfolio polaroid cards"
-              className="w-40 md:w-52 lg:w-[85%] max-h-[300px] object-contain drop-shadow-2xl"
+              className="lg:w-[85%] max-h-[300px] object-contain drop-shadow-2xl"
             />
           </motion.div>
 

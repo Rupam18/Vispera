@@ -47,23 +47,23 @@ const allClients = [
 
 export default function Clients() {
   return (
-    <section id="clients" className="bg-bg-light overflow-hidden py-10">
+    <section id="clients" className="bg-bg-light overflow-hidden pt-4 pb-12">
       <div className="w-full px-8 md:px-16 lg:px-20">
         {/* Header */}
-        <div className="flex flex-col items-center mb-10 relative">
-          <p className="text-[#5EA4A4] font-bold tracking-[0.3em] text-[10px] md:text-sm uppercase mb-2">OUR CLIENTS</p>
+        <div className="flex flex-col items-center mb-6 relative">
+          <p className="text-[#5EA4A4] font-bold tracking-[0.3em] text-[10px] md:text-sm uppercase mb-1">OUR CLIENTS</p>
           <div className="relative">
             <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-[#0A374C] font-heading leading-tight relative z-10">Stories Built Together</h2>
-            <div className="absolute -top-6 -right-12 w-20 h-20 opacity-80 z-0">
+            <div className="absolute -top-2 -right-6 w-12 h-12 opacity-80 z-0">
                <img src={headingBg} alt="" className="w-full h-full object-contain" />
             </div>
           </div>
         </div>
 
         {/* Dynamic Logo Wall */}
-        <div className="space-y-12">
+        <div className="space-y-4 md:space-y-6">
           {/* Row 1 - Top Partners */}
-          <div className="flex flex-wrap items-center justify-between gap-10 border-b border-gray-100 pb-12">
+          <div className="flex flex-wrap items-center justify-between gap-6 md:gap-8 lg:gap-10 border-b border-gray-100 pb-4 md:pb-6">
             {topClients.map((client) => (
               <motion.div
                 key={client.name}
@@ -73,21 +73,21 @@ export default function Clients() {
                 <img
                   src={client.logo}
                   alt={client.name}
-                  className="h-12 md:h-16 lg:h-20 w-auto object-contain"
+                  className="h-10 md:h-12 lg:h-20 w-auto object-contain"
                 />
               </motion.div>
             ))}
           </div>
 
           {/* Center Area with Quote and Surrounding Logos */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8 items-center">
             
             {/* Left Column Logos */}
-            <div className="lg:col-span-3 grid grid-cols-2 gap-8">
+            <div className="lg:col-span-3 grid grid-cols-2 gap-4 md:gap-6">
               {allClients.slice(0, 4).map((client) => (
-                <div key={client.name} className="flex flex-col items-center gap-3">
-                  <img src={client.logo} alt={client.name} className="h-14 md:h-18 object-contain" />
-                  <p className="text-[10px] text-gray-400 font-medium uppercase tracking-tighter text-center">{client.name}</p>
+                <div key={client.name} className="flex flex-col items-center gap-1 md:gap-2">
+                  <img src={client.logo} alt={client.name} className="h-12 md:h-14 lg:h-18 object-contain" />
+                  <p className="text-[9px] md:text-[10px] text-gray-400 font-medium uppercase tracking-tighter text-center">{client.name}</p>
                 </div>
               ))}
             </div>
@@ -97,43 +97,43 @@ export default function Clients() {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                className="bg-[#d1e9e7]/50 backdrop-blur-sm border-2 border-[#5EA4A4]/20 rounded-[3rem] p-10 md:p-16 text-center shadow-inner relative overflow-hidden"
+                className="bg-[#d1e9e7]/30 backdrop-blur-sm border border-[#5EA4A4]/10 rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 lg:p-12 text-center shadow-inner relative overflow-hidden"
               >
-                <div className="absolute top-6 right-8 opacity-10">
-                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                <div className="absolute top-4 right-6 opacity-10">
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
                     <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H3c-1.25 0-2 .75-2 2v8c0 4 0 8 2 8zm15 0c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-5c-1.25 0-2 .75-2 2v8c0 4 0 8 2 8z"/>
                   </svg>
                 </div>
-                <p className="text-[#0A374C] text-lg md:text-xl lg:text-2xl font-medium leading-relaxed italic z-10 relative">
+                <p className="text-[#0A374C] text-[13px] md:text-[15px] lg:text-xl font-medium leading-relaxed italic z-10 relative">
                   " Behind every story is a partnership that matters. We've had the privilege of working with organizations that are shaping change, capturing their journeys through visuals that inform, inspire, and connect. "
                 </p>
-                <div className="mt-8 flex justify-center opacity-30">
-                   <div className="w-12 h-1 bg-[#5EA4A4] rounded-full" />
+                <div className="mt-4 flex justify-center opacity-30">
+                   <div className="w-8 h-1 bg-[#5EA4A4] rounded-full" />
                 </div>
               </motion.div>
             </div>
 
             {/* Right Column Logos */}
-            <div className="lg:col-span-3 grid grid-cols-2 gap-8">
+            <div className="lg:col-span-3 grid grid-cols-2 gap-4 md:gap-6">
               {allClients.slice(4, 8).map((client) => (
-                <div key={client.name} className="flex flex-col items-center gap-3">
-                  <img src={client.logo} alt={client.name} className="h-14 md:h-18 object-contain" />
-                  <p className="text-[10px] text-gray-400 font-medium uppercase tracking-tighter text-center">{client.name}</p>
+                <div key={client.name} className="flex flex-col items-center gap-1 md:gap-2">
+                  <img src={client.logo} alt={client.name} className="h-12 md:h-14 lg:h-18 object-contain" />
+                  <p className="text-[9px] md:text-[10px] text-gray-400 font-medium uppercase tracking-tighter text-center">{client.name}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Bottom Row - Remaining Logos */}
-          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-20 pt-8">
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-16 pt-2 md:pt-4">
             {allClients.slice(8).map((client) => (
               <motion.div
                 key={client.name}
                 whileHover={{ y: -5 }}
-                className="flex flex-col items-center gap-4"
+                className="flex flex-col items-center gap-1 md:gap-3"
               >
-                <img src={client.logo} alt={client.name} className="h-12 md:h-16 object-contain" />
-                <p className="text-[10px] text-gray-400 font-medium uppercase tracking-tighter text-center">{client.name}</p>
+                <img src={client.logo} alt={client.name} className="h-10 md:h-12 lg:h-16 object-contain" />
+                <p className="text-[9px] md:text-[10px] text-gray-400 font-medium uppercase tracking-tighter text-center">{client.name}</p>
               </motion.div>
             ))}
           </div>
