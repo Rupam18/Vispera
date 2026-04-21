@@ -109,28 +109,26 @@ export default function Projects() {
 
   return (
     <>
-      <section id="work" className="bg-bg-light overflow-hidden py-12 md:py-16">
+      <section id="work" className="bg-bg-light overflow-hidden py-8 md:py-10">
         <div className="w-full px-6 md:px-12 lg:px-16">
           {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div className="space-y-1 relative w-fit">
-              <p className="text-[#5EA4A4] font-bold tracking-[0.2em] text-[10px] md:text-xs uppercase">OUR WORK</p>
-              <div className="relative">
-                <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-[#0A374C] font-heading leading-tight relative z-10">Stories We've Told</h2>
-                <div className="absolute -top-4 -right-12 w-20 h-20 opacity-80 z-0">
-                   <img src={headingBg} alt="" className="w-full h-full object-contain" />
-                </div>
-              </div>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-20 px-4 md:px-8">
+            <div className="space-y-4">
+              <p className="text-[#5EA4A4] font-bold tracking-[0.4em] text-[10px] md:text-sm uppercase">OUR WORK</p>
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#0A374C] font-heading leading-tight italic">
+                Stories We've Told
+              </h2>
             </div>
+            
             {/* Filter tabs */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-4">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-7 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeCategory === cat
-                    ? "bg-[#0A374C] text-white shadow-xl scale-105"
-                    : "bg-white text-gray-500 border border-gray-100 hover:border-teal-500 hover:text-teal-500"
+                  className={`px-8 py-3 rounded-full text-[13px] font-bold tracking-wide transition-all duration-300 ${activeCategory === cat
+                    ? "bg-[#0A374C] text-white shadow-2xl scale-105"
+                    : "bg-white text-gray-400 border border-gray-100 hover:border-[#5EA4A4] hover:text-[#5EA4A4]"
                     }`}
                 >
                   {cat}
@@ -145,36 +143,40 @@ export default function Projects() {
               <motion.div
                 key={project.id}
                 onClick={() => setSelectedProject(project)}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05, duration: 0.6 }}
-                className="group relative rounded-[2rem] overflow-hidden cursor-pointer aspect-[4/3] bg-gray-100 shadow-md"
+                className="group relative rounded-3xl overflow-hidden cursor-pointer aspect-[4/3] bg-gray-100 shadow-lg"
               >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
-                <div className="absolute inset-0 bg-[#000000]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-between py-10 px-6">
-                  <span className="bg-white/40 backdrop-blur-md border border-white/20 text-[#0A374C] text-[10px] font-bold tracking-widest px-5 py-2 rounded-md shadow-sm uppercase">
+                {/* Sliding Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A374C]/90 via-[#0A374C]/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col items-center justify-center p-6 text-center">
+                  
+                  {/* Category Top Badge (Rectangle) */}
+                  <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-[#5EA4A4] text-[#0A374C] px-6 py-1.5 rounded-sm font-bold text-[10px] uppercase tracking-[0.2em] shadow-lg">
                     {project.badge}
-                  </span>
-
-                  <div className="text-center px-4 -mt-4">
-                    <h3 className="text-white text-sm md:text-base font-bold leading-snug drop-shadow-xl">
-                      {project.title}
-                    </h3>
                   </div>
 
-                  <button className="bg-[#5EA4A4] hover:bg-[#5EA4A4] text-white text-[11px] font-bold uppercase tracking-[0.2em] px-10 py-2.5 rounded-md transition-all shadow-xl">
-                    View
-                  </button>
+                  <div className="space-y-4 px-2 mt-8">
+                    <h3 className="text-white text-sm md:text-base lg:text-lg font-bold leading-tight">
+                      {project.title}
+                    </h3>
+                    
+                    <button className="bg-[#5EA4A4] hover:bg-[#4D9090] text-[#0A374C] text-[11px] font-bold uppercase tracking-[0.2em] px-8 py-2.5 rounded-lg transition-colors shadow-xl mx-auto block">
+                      View
+                    </button>
+                  </div>
                 </div>
 
-                <div className="absolute inset-x-0 bottom-0 bg-[#000000]/60 backdrop-blur-sm py-4 px-6 group-hover:opacity-0 transition-all duration-300">
-                  <p className="text-white text-xs md:text-[13px] font-medium leading-tight text-center lg:text-left">
+                {/* Default Bottom Bar (Fades out on hover) */}
+                <div className="absolute inset-x-0 bottom-0 bg-[#0A374C]/70 backdrop-blur-md py-4 px-6 group-hover:opacity-0 transition-opacity duration-300">
+                  <p className="text-white text-[11px] md:text-xs font-bold leading-tight uppercase tracking-wider text-center">
                     {project.title}
                   </p>
                 </div>

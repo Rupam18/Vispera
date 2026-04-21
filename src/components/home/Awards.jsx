@@ -24,7 +24,7 @@ const awards = [
 
 export default function Awards() {
   return (
-    <section id="awards" className="relative py-12 bg-[#0a363d] overflow-hidden">
+    <section id="awards" className="relative py-8 bg-[#0a363d] overflow-hidden">
       {/* Background Pattern - Dotted */}
       <div className="absolute top-10 right-10 opacity-20 pointer-events-none">
         <div className="grid grid-cols-6 gap-3">
@@ -36,7 +36,7 @@ export default function Awards() {
 
       <div className="w-full px-8 md:px-16 lg:px-24">
         {/* Header */}
-        <div className="text-center mb-16 relative w-fit mx-auto">
+        <div className="text-center mb-10 relative w-fit mx-auto">
           <p className="text-[#5EA4A4] font-bold tracking-[0.3em] text-[10px] md:text-xs uppercase mb-1">AWARDS</p>
           <div className="relative">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-heading leading-tight relative z-10">Recognized for Our Work</h2>

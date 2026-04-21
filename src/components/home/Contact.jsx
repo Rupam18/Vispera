@@ -4,7 +4,7 @@ import headingBg from "../../assets/images/decoration-heading-bg.svg";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 md:py-20" style={{ backgroundColor: "#F5F3EF" }}>
+    <section id="contact" className="py-8 md:py-12" style={{ backgroundColor: "#F5F3EF" }}>
         <div className="max-w-[1280px] mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
@@ -19,12 +19,9 @@ export default function Contact() {
                 Always Here to Connect
               </p>
               <div className="relative inline-block mb-3">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#0A374C] italic relative z-10 font-heading">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0A374C] font-heading leading-tight">
                   Let's Tell Your Story
                 </h2>
-                <div className="absolute -top-4 -right-10 w-16 h-16 opacity-80 z-0">
-                   <img src={headingBg} alt="" className="w-full h-full object-contain" />
-                </div>
               </div>
               <p className="text-[#555] text-sm leading-relaxed mb-6">
                 We're here to understand your vision and help you bring meaningful stories to life.

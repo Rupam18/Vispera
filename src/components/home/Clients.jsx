@@ -47,10 +47,10 @@ const allClients = [
 
 export default function Clients() {
   return (
-    <section id="clients" className="bg-bg-light overflow-hidden py-16">
+    <section id="clients" className="bg-bg-light overflow-hidden py-10">
       <div className="w-full px-8 md:px-16 lg:px-20">
         {/* Header */}
-        <div className="flex flex-col items-center mb-16 relative">
+        <div className="flex flex-col items-center mb-10 relative">
           <p className="text-[#5EA4A4] font-bold tracking-[0.3em] text-[10px] md:text-sm uppercase mb-2">OUR CLIENTS</p>
           <div className="relative">
             <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-[#0A374C] font-heading leading-tight relative z-10">Stories Built Together</h2>
@@ -140,7 +140,7 @@ export default function Clients() {
         </div>
 
         {/* View All Button */}
-        <div className="flex justify-center mt-20">
+        <div className="flex justify-center mt-10">
           <button className="bg-[#5EA4A4] hover:bg-[#5EA4A4] text-white font-bold py-4 px-16 rounded-xl transition-all transform hover:scale-105 active:scale-95 shadow-2xl shadow-[#5EA4A4]/20 uppercase text-xs tracking-[0.3em]">
             View All
           </button>

@@ -18,10 +18,10 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-16 md:py-20" style={{ backgroundColor: "#F7F5F2" }}>
+    <section id="services" className="py-10 md:py-12" style={{ backgroundColor: "#F7F5F2" }}>
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="flex flex-col items-center mb-16 relative">
+        <div className="flex flex-col items-center mb-10 relative">
           <p className="text-[#5EA4A4] font-bold tracking-[0.3em] text-[10px] md:text-xs uppercase mb-2">OUR SERVICES</p>
           <div className="relative">
             <motion.h2

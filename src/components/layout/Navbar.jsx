@@ -4,61 +4,73 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/images/transparent-logo.png";
 
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Our Work", href: "/our-work" },
+  { name: "Clients", href: "/clients" },
+  { name: "Contact Us", href: "/contact" },
+];
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => setIsScrolled(window.scrollY > 0);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Our Work", href: "/our-work" },
-    { name: "Clients", href: "/clients" },
-    { name: "Contact Us", href: "/contact" },
-  ];
-
-  const location = useLocation();
-
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b border-gray-100 transition-all duration-300">
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-16 md:h-20 lg:h-24">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm h-[88px] flex items-center">
+
+      {/* Main navbar row */}
+      <div className="w-full px-10 lg:px-40">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img src={logo} alt="Vispera Studios" className="h-12 md:h-14 lg:h-16 w-auto object-contain" />
+          <Link to="/" className="flex items-center shrink-0">
+            <img
+              src={logo}
+              alt="Vispera Studios"
+              className="w-auto h-[85px] object-contain"
+            />
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-10">
-            <div className="flex items-center gap-6 lg:gap-8 mr-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  className={`text-[13px] lg:text-[14px] font-semibold tracking-wide transition-colors ${
-                    location.pathname === link.href ? "text-[#5EA4A4]" : "text-[#0A374C] hover:text-[#5EA4A4]"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-            
-            <Link 
-              to="/contact" 
-              className="bg-[#0A374C] text-white text-[13px] lg:text-[14px] font-bold px-8 py-3 rounded-xl transition-all hover:bg-[#0A374C] hover:shadow-lg active:scale-95"
-            >
-              Start Your Project
-            </Link>
+          {/* Desktop nav links */}
+          <div className="hidden md:flex items-center gap-7 lg:gap-10">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                className={`font-medium transition-colors duration-200 text-[15px] ${
+                  location.pathname === link.href
+                    ? "text-[#5EA4A4]"
+                    : "text-[#0A374C] hover:text-[#5EA4A4]"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* CTA button */}
+          <Link
+            to="/contact"
+            className="hidden md:inline-block text-white font-bold rounded-lg transition-all duration-300 hover:opacity-90 shadow-sm"
+            style={{
+              backgroundColor: "#0A374C",
+              fontSize: "13px",
+              padding: "14px 32px",
+              letterSpacing: "0.05em"
+            }}
+          >
+            Start Your Project
+          </Link>
+
+          {/* Mobile toggle */}
           <button
             className="md:hidden text-[#0A374C] p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -68,31 +80,30 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="absolute top-full left-0 w-full bg-white shadow-xl p-6 md:hidden border-t border-gray-50"
+            exit={{ opacity: 0, y: -8 }}
+            className="absolute top-full left-0 w-full bg-white shadow-lg px-6 py-5 md:hidden"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.href}
-                  className={`text-base font-semibold transition-colors py-2 border-b border-gray-50 ${
-                    location.pathname === link.href ? "text-[#5EA4A4]" : "text-[#0A374C]"
-                  }`}
+                  className="text-base font-medium text-[#1a1a1a] hover:text-[#2a9d8f] transition-colors py-2 border-b border-gray-100"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Link 
-                to="/contact" 
-                className="bg-[#0A374C] text-white text-center font-bold py-4 rounded-xl mt-2" 
+              <Link
+                to="/contact"
+                className="inline-block text-center text-white text-sm font-semibold px-6 py-3 rounded-lg mt-2"
+                style={{ backgroundColor: "#1a3a3a" }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Start Your Project

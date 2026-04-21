@@ -32,9 +32,9 @@ export default function Testimonials() {
   const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section id="testimonials" className="py-20 bg-white overflow-hidden">
+    <section id="testimonials" className="py-10 bg-white overflow-hidden">
       <div className="w-full">
-        <div className="flex flex-col lg:flex-row items-stretch gap-8 min-h-[460px]">
+        <div className="flex flex-col lg:flex-row items-stretch gap-8 min-h-[400px]">
           
           {/* Section 1: Identity Anchor (Starts from Left Wall) */}
           <div className="lg:w-[30%] bg-[#0d393d] p-10 lg:pl-16 flex flex-col justify-center rounded-r-[3rem] lg:rounded-l-none shadow-xl relative overflow-hidden">
