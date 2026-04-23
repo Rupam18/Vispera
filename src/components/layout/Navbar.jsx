@@ -28,7 +28,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm h-[88px] flex items-center">
 
       {/* Main navbar row */}
-      <div className="w-full px-10 lg:px-40">
+      <div className="w-full px-8 md:px-16">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center shrink-0">

@@ -18,33 +18,38 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-4 md:py-6" style={{ backgroundColor: "#F7F5F2" }}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="services" className="py-2 md:py-4" style={{ backgroundColor: "#F7F5F2" }}>
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
 
-        <div className="flex flex-col items-center mb-6 relative">
-          <p className="text-[#5EA4A4] font-bold tracking-[0.3em] text-[10px] md:text-xs uppercase mb-2">OUR SERVICES</p>
+        <div className="flex flex-col items-center mb-10 relative">
+          <p
+            className="text-[#5EA4A4] font-semibold uppercase text-center align-middle text-[16px] leading-[42px] tracking-normal mb-2"
+            style={{ fontFamily: 'Inter, sans-serif' }}
+          >
+            OUR SERVICES
+          </p>
           <div className="relative">
             <motion.h2
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-5xl font-bold text-[#0A374C] font-heading relative z-10"
+              className="text-4xl md:text-5xl font-bold text-[#0A374C] font-heading relative z-10"
             >
               How We Help
             </motion.h2>
             <div className="absolute -top-2 -right-6 w-12 h-12 opacity-80 z-0">
-               <img src={headingBg} alt="" className="w-full h-full object-contain" />
+              <img src={headingBg} alt="" className="w-full h-full object-contain" />
             </div>
           </div>
         </div>
 
-        {/* Row 1 — 4 cards in one line */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        {/* Row 1 — 4 cards in one line - Pushed More Left/Right */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-6">
           {services.slice(0, 4).map((s, i) => (
             <ServiceCard key={s.id} service={s} delay={i * 0.08} />
           ))}
         </div>
-        
+
         {/* View All */}
         <div className="flex justify-center mt-12">
           <button

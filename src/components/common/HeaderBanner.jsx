@@ -12,7 +12,7 @@ export default function HeaderBanner({ title }) {
 
       {/* Clean Full-Bleed Image with High-Centered Title */}
       <div className="absolute inset-x-0 top-1/2 -translate-y-[60%] flex items-center px-10 md:px-14 lg:px-20 z-10">
-        <h1 className="text-white text-5xl md:text-6xl lg:text-6xl font-bold font-heading drop-shadow-2xl italic">
+        <h1 className="text-white text-5xl md:text-6xl lg:text-6xl font-bold font-heading drop-shadow-2xl ">
           {title}
         </h1>
       </div>

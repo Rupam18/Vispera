@@ -1,27 +1,30 @@
 import { motion } from "framer-motion";
-
-// Client logos
-import cftiLogo from "../../assets/images/client-logos/cfti_1658408319_43.png";
-import germanLogo from "../../assets/images/client-logos/GYVFNblW8AAa45p.png";
-import impactDashLogo from "../../assets/images/client-logos/impact-dash.jpg";
-import gizLogo from "../../assets/images/client-logos/logo-w-2x.png";
-import chandraLogo from "../../assets/images/client-logos/81504159.png";
-import yuvaMitraLogo from "../../assets/images/client-logos/yLEi-Aq8_400x400.jpg";
-import manaVahiniLogo from "../../assets/images/client-logos/EYkZlZSpUrmvstnyjo15173743258937.png";
-import atalBhujalLogo from "../../assets/images/client-logos/Atal-Bhujal-Yojana-july-2025.png";
-import tataTrustsLogo from "../../assets/images/client-logos/tata-trusts.jfif";
-import safetyResearchLogo from "../../assets/images/client-logos/imgpsh_fullsize_anim-1.png";
-import krushakMitraLogo from "../../assets/images/client-logos/Krushak-Mitra-Logo.png";
-import lokatmikLogo from "../../assets/images/client-logos/thig_x550.png";
-import govMahaLogo from "../../assets/images/client-logos/image-(2).png";
-import nhbLogo from "../../assets/images/client-logos/National_Horticulture_Board_2923.png";
-import concernIndiaLogo from "../../assets/images/client-logos/image-(3).png";
-import ncpedpLogo from "../../assets/images/client-logos/image-(4).png";
-import agriLogo from "../../assets/images/client-logos/f686e6_ae5b70decde146698be2586f255b65fe~mv2.png";
-import alomaLogo from "../../assets/images/client-logos/aloma-logo-1.webp";
 import headingBg from "../../assets/images/decoration-heading-bg.svg";
+import cardDecorationBg from "../../assets/images/Group39737.png";
 
-const topClients = [
+// Import all logos
+import cftiLogo from "../../assets/images/rowf1.png";
+import germanLogo from "../../assets/images/image.png";
+import impactDashLogo from "../../assets/images/rowf3.png";
+import gizLogo from "../../assets/images/GIZ-logo-cobaltqube-media1.png";
+import chandraLogo from "../../assets/images/rowf5.png";
+
+import yuvaMitraLogo from "../../assets/images/rows1.png";
+import manaMahilaLogo from "../../assets/images/rows2.png"; // Circle pink
+import atalBhujalLogo from "../../assets/images/rows3.png"; // Circle blue
+import tataTrustsLogo from "../../assets/images/tata.jpeg"; // Red box
+import safetyResearchLogo from "../../assets/images/safety.png";
+import modLogo from "../../assets/images/ministry.png"; // Ministry of Agriculture
+
+import govMahaLogo from "../../assets/images/govtofmah.png";
+import krushakMitraLogo from "../../assets/images/rowl2.png";
+import lokatmikLogo from "../../assets/images/rowl3.png";
+import nhbLogo from "../../assets/images/rowl4.png";
+import concernIndiaLogo from "../../assets/images/concern.png";
+import ncpedpLogo from "../../assets/images/rowl5.png";
+
+// Row 1 — top 5
+const topRow = [
   { name: "CFTI", logo: cftiLogo },
   { name: "German Cooperation", logo: germanLogo },
   { name: "ImpactDash", logo: impactDashLogo },
@@ -29,122 +32,229 @@ const topClients = [
   { name: "Chandra Foundation", logo: chandraLogo },
 ];
 
-const allClients = [
+// Left column 
+const leftCol = [
   { name: "Yuva Mitra", logo: yuvaMitraLogo },
-  { name: "Mana Vahini Foundation", logo: manaVahiniLogo },
+  { name: "Mana Mahila Foundation", logo: manaMahilaLogo },
+  { name: "Safety Research Foundation", logo: safetyResearchLogo },
+];
+
+// Right column
+const rightCol = [
   { name: "Atal Bhujal Yojana", logo: atalBhujalLogo },
   { name: "TATA Trusts", logo: tataTrustsLogo },
-  { name: "Safety Research Foundation", logo: safetyResearchLogo },
+  { name: "Ministry of Agriculture", logo: modLogo },
+];
+
+// Bottom row — 6 logos
+const bottomRow = [
+  { name: "Government of Maharashtra", logo: govMahaLogo },
   { name: "Krushak Mitra", logo: krushakMitraLogo },
   { name: "Lokatmik Foundation", logo: lokatmikLogo },
-  { name: "Government of Maharashtra", logo: govMahaLogo },
   { name: "National Horticulture Board", logo: nhbLogo },
   { name: "Concern India Foundation", logo: concernIndiaLogo },
   { name: "NCPEDP", logo: ncpedpLogo },
-  { name: "Ministry of Agriculture", logo: agriLogo },
-  { name: "Aloma Home Care", logo: alomaLogo },
 ];
+
+const LogoItem = ({ client, h = "h-12 md:h-14" }) => (
+  <div className="flex flex-col items-center justify-center p-0">
+    <img
+      src={client.logo}
+      alt={client.name}
+      className={`${h} w-auto object-contain transition-transform hover:scale-105 duration-300`}
+    />
+  </div>
+);
 
 export default function Clients() {
   return (
-    <section id="clients" className="bg-bg-light overflow-hidden pt-4 pb-12">
-      <div className="w-full px-8 md:px-16 lg:px-20">
+    <section id="clients" className="bg-bg-light py-8 md:py-12 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
+
         {/* Header */}
-        <div className="flex flex-col items-center mb-6 relative">
-          <p className="text-[#5EA4A4] font-bold tracking-[0.3em] text-[10px] md:text-sm uppercase mb-1">OUR CLIENTS</p>
+        <div className="flex flex-col items-center mb-8">
+          <p className="text-[#5EA4A4] font-bold tracking-[0.3em] text-[10px] md:text-xs uppercase mb-1">OUR CLIENTS</p>
           <div className="relative">
-            <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-[#0A374C] font-heading leading-tight relative z-10">Stories Built Together</h2>
-            <div className="absolute -top-2 -right-6 w-12 h-12 opacity-80 z-0">
-               <img src={headingBg} alt="" className="w-full h-full object-contain" />
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0A374C] font-heading relative z-10 text-center">
+              Stories Built Together
+            </h2>
+            <div className="absolute -top-1 -right-8 w-10 h-10 opacity-70 z-0">
+              <img src={headingBg} alt="" className="w-full h-full object-contain" />
             </div>
           </div>
         </div>
 
-        {/* Dynamic Logo Wall */}
-        <div className="space-y-4 md:space-y-6">
-          {/* Row 1 - Top Partners */}
-          <div className="flex flex-wrap items-center justify-between gap-6 md:gap-8 lg:gap-10 border-b border-gray-100 pb-4 md:pb-6">
-            {topClients.map((client) => (
-              <motion.div
-                key={client.name}
-                whileHover={{ scale: 1.1, rotate: 2 }}
-                className="flex items-center justify-center grayscale-[0.2] hover:grayscale-0 transition-all"
-              >
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  className="h-10 md:h-12 lg:h-20 w-auto object-contain"
-                />
-              </motion.div>
+        {/* ============================================================
+            DESKTOP VIEW (lg:flex) - STRICTLY UNTOUCHED ORIGINAL GRID
+           ============================================================ */}
+        <div className="hidden lg:flex flex-col gap-0">
+          {/* Top Row - 5 Logos */}
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-10 border-b border-gray-100 pb-8">
+            {topRow.map((c) => (
+              <LogoItem key={c.name} client={c} h="h-12 md:h-15" />
             ))}
           </div>
 
-          {/* Center Area with Quote and Surrounding Logos */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8 items-center">
-            
-            {/* Left Column Logos */}
-            <div className="lg:col-span-3 grid grid-cols-2 gap-4 md:gap-6">
-              {allClients.slice(0, 4).map((client) => (
-                <div key={client.name} className="flex flex-col items-center gap-1 md:gap-2">
-                  <img src={client.logo} alt={client.name} className="h-12 md:h-14 lg:h-18 object-contain" />
-                  <p className="text-[9px] md:text-[10px] text-gray-400 font-medium uppercase tracking-tighter text-center">{client.name}</p>
-                </div>
+          {/* Middle Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
+            {/* Left Col - 3 Logos */}
+            <div className="col-span-3 flex flex-col items-center gap-10">
+              {leftCol.map((c) => (
+                <LogoItem key={c.name} client={c} h="h-12 md:h-22" />
               ))}
             </div>
 
-            {/* Central Quote Box */}
-            <div className="lg:col-span-6 relative">
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                className="bg-[#d1e9e7]/30 backdrop-blur-sm border border-[#5EA4A4]/10 rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 lg:p-12 text-center shadow-inner relative overflow-hidden"
-              >
-                <div className="absolute top-4 right-6 opacity-10">
-                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                    <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H3c-1.25 0-2 .75-2 2v8c0 4 0 8 2 8zm15 0c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-5c-1.25 0-2 .75-2 2v8c0 4 0 8 2 8z"/>
-                  </svg>
-                </div>
-                <p className="text-[#0A374C] text-[13px] md:text-[15px] lg:text-xl font-medium leading-relaxed italic z-10 relative">
-                  " Behind every story is a partnership that matters. We've had the privilege of working with organizations that are shaping change, capturing their journeys through visuals that inform, inspire, and connect. "
-                </p>
-                <div className="mt-4 flex justify-center opacity-30">
-                   <div className="w-8 h-1 bg-[#5EA4A4] rounded-full" />
-                </div>
-              </motion.div>
-            </div>
+            {/* Quote Center */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="col-span-6 bg-[#5EA4A480] border-2 border-[#0A374C] rounded-3xl px-10 py-6 md:px-12 md:py-8 text-center relative shadow-sm"
+            >
+              <p className="text-[#0A374C] text-lg md:text-xl font-medium leading-[1.6]">
+                “ Behind every story is a partnership that <br />
+                matters. We've had the privilege of working with <br />
+                organizations that are shaping change, capturing <br />
+                their journeys through visuals that inform, <br />
+                inspire, and connect. ”
+              </p>
+              <div className="absolute bottom-2 right-4 md:bottom-0 md:right-1 w-16 h-18 md:w-20 md:h-20 opacity-80">
+                <img src={cardDecorationBg} alt="" className="w-full h-full object-contain" />
+              </div>
+            </motion.div>
 
-            {/* Right Column Logos */}
-            <div className="lg:col-span-3 grid grid-cols-2 gap-4 md:gap-6">
-              {allClients.slice(4, 8).map((client) => (
-                <div key={client.name} className="flex flex-col items-center gap-1 md:gap-2">
-                  <img src={client.logo} alt={client.name} className="h-12 md:h-14 lg:h-18 object-contain" />
-                  <p className="text-[9px] md:text-[10px] text-gray-400 font-medium uppercase tracking-tighter text-center">{client.name}</p>
-                </div>
+            {/* Right Col - 3 Logos */}
+            <div className="col-span-3 flex flex-col items-center gap-10">
+              {rightCol.map((c) => (
+                <LogoItem key={c.name} client={c} h="h-12 md:h-22" />
               ))}
             </div>
           </div>
 
-          {/* Bottom Row - Remaining Logos */}
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-16 pt-2 md:pt-4">
-            {allClients.slice(8).map((client) => (
-              <motion.div
-                key={client.name}
-                whileHover={{ y: -5 }}
-                className="flex flex-col items-center gap-1 md:gap-3"
-              >
-                <img src={client.logo} alt={client.name} className="h-10 md:h-12 lg:h-16 object-contain" />
-                <p className="text-[9px] md:text-[10px] text-gray-400 font-medium uppercase tracking-tighter text-center">{client.name}</p>
-              </motion.div>
+          {/* Bottom Row - 6 Logos */}
+          <div className="flex flex-wrap items-center justify-between gap-8 md:gap-12 pt-8 border-t border-gray-100">
+            {bottomRow.map((c) => (
+              <LogoItem key={c.name} client={c} h="h-18 md:h-28" />
             ))}
+          </div>
+        </div>
+
+        {/* ============================================================
+            TABLET VIEW (md:flex lg:hidden) - EXACT FIGMA CLOUD MATCH
+           ============================================================ */}
+        <div className="hidden md:flex lg:hidden flex-col gap-6">
+
+          {/* Top Row - Dense Cluster */}
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
+            <LogoItem client={topRow[0]} h="h-16" />
+            <LogoItem client={{ name: "Safety Research Foundation", logo: safetyResearchLogo }} h="h-14" />
+            <LogoItem client={{ name: "GIZ", logo: gizLogo }} h="h-16" />
+            <LogoItem client={{ name: "TATA Trusts", logo: tataTrustsLogo }} h="h-14" />
+          </div>
+
+          {/* Middle Cluster - Overlapping Cloud */}
+          <div className="grid grid-cols-12 gap-0 items-center -my-2">
+
+            {/* Left Cluster - Clean Line */}
+            <div className="col-span-3 flex flex-col items-center gap-8">
+              <LogoItem client={leftCol[0]} h="h-14" />
+              <LogoItem client={leftCol[1]} h="h-14" />
+              <LogoItem client={{ name: "German Cooperation", logo: germanLogo }} h="h-14" />
+            </div>
+
+            {/* Central Partnership Box - High Density */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="col-span-6 bg-[#5EA4A4]/40 border-[1.5px] border-[#0A374C] rounded-[1.5rem] px-6 py-8 text-center relative shadow-sm z-10"
+            >
+              <p className="text-[#0A374C] text-[15px] font-medium leading-[1.6] italic">
+                “ Behind every story is a partnership that matters. We've had the privilege of working with organizations that are shaping change, capturing their journeys through visuals that inform, inspire, and connect. ”
+              </p>
+              <div className="absolute bottom-2 right-4 w-10 h-10 opacity-10">
+                <img src={cardDecorationBg} alt="" className="w-full h-full object-contain grayscale brightness-0" />
+              </div>
+            </motion.div>
+
+            {/* Right Cluster - Clean Line */}
+            <div className="col-span-3 flex flex-col items-center gap-8">
+              <LogoItem client={rightCol[0]} h="h-14" />
+              <LogoItem client={rightCol[2]} h="h-14" />
+              <LogoItem client={{ name: "ImpactDash", logo: impactDashLogo }} h="h-14" />
+            </div>
+          </div>
+
+          {/* Bottom Clusters - Distributed */}
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-10">
+              <LogoItem client={bottomRow[0]} h="h-12" />
+              <LogoItem client={bottomRow[3]} h="h-12" />
+              <LogoItem client={bottomRow[4]} h="h-12" />
+              <LogoItem client={bottomRow[5]} h="h-12" />
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-16">
+              <LogoItem client={bottomRow[1]} h="h-18" />
+              <LogoItem client={bottomRow[2]} h="h-18" />
+              <LogoItem client={{ name: "Ministry of Agriculture", logo: modLogo }} h="h-18" />
+            </div>
+          </div>
+        </div>
+
+        {/* ============================================================
+            MOBILE VIEW (flex md:hidden) - EXACT FIGMA MATCH
+           ============================================================ */}
+        <div className="flex md:hidden flex-col gap-6 px-1">
+
+          {/* Top Grid: 3 rows, 3 cols */}
+          <div className="grid grid-cols-3 gap-y-7 gap-x-3 items-center place-items-center">
+            {/* Row 1 */}
+            <LogoItem client={{ name: "CFTI", logo: cftiLogo }} h="h-8" />
+            <LogoItem client={{ name: "Safety Research Foundation", logo: safetyResearchLogo }} h="h-9" />
+            <LogoItem client={{ name: "GIZ", logo: gizLogo }} h="h-7" />
+
+            {/* Row 2 */}
+            <LogoItem client={{ name: "Yuva Mitra", logo: yuvaMitraLogo }} h="h-9" />
+            <LogoItem client={{ name: "TATA Trusts", logo: tataTrustsLogo }} h="h-8" />
+            <LogoItem client={{ name: "Ministry of Agriculture", logo: modLogo }} h="h-9" />
+
+            {/* Row 3 */}
+            <LogoItem client={{ name: "German Cooperation", logo: germanLogo }} h="h-8" />
+            <LogoItem client={{ name: "Lokatmik Foundation", logo: lokatmikLogo }} h="h-14" />
+            <LogoItem client={{ name: "Atal Bhujal Yojana", logo: atalBhujalLogo }} h="h-9" />
+          </div>
+
+          {/* Central Quote Card */}
+          <motion.div className="bg-[#5EA4A4]/30 border-2 border-[#0A374C] rounded-2xl px-6 py-8 text-center relative shadow-sm my-2">
+            <p className="text-[#0A374C] text-[12px] font-bold leading-relaxed italic">
+              “ Behind every story is a partnership that matters. We've had the privilege of working with organizations that are shaping change, capturing their journeys through visuals that inform, inspire, and connect. ”
+            </p>
+            <div className="absolute -bottom-3 -right-2 w-10 h-10 opacity-80 pointer-events-none">
+              <img src={cardDecorationBg} alt="" className="w-full h-full object-contain" />
+            </div>
+          </motion.div>
+
+          {/* Bottom Grid: 2 rows, 3 cols */}
+          <div className="grid grid-cols-3 gap-y-7 gap-x-3 items-center place-items-center">
+            {/* Row 4 */}
+            <LogoItem client={{ name: "Mana Mahila Foundation", logo: manaMahilaLogo }} h="h-10" />
+            <LogoItem client={{ name: "National Horticulture Board", logo: nhbLogo }} h="h-10" />
+            <LogoItem client={{ name: "ImpactDash", logo: impactDashLogo }} h="h-6" />
+
+            {/* Row 5 */}
+            <LogoItem client={{ name: "Government of Maharashtra", logo: govMahaLogo }} h="h-11" />
+            <LogoItem client={{ name: "Chandra Foundation", logo: chandraLogo }} h="h-10" />
+            <LogoItem client={{ name: "Krushak Mitra", logo: krushakMitraLogo }} h="h-9" />
           </div>
         </div>
 
         {/* View All Button */}
-        <div className="flex justify-center mt-10">
-          <button className="bg-[#5EA4A4] hover:bg-[#5EA4A4] text-white font-bold py-4 px-16 rounded-xl transition-all transform hover:scale-105 active:scale-95 shadow-2xl shadow-[#5EA4A4]/20 uppercase text-xs tracking-[0.3em]">
+        <div className="flex justify-center mt-12">
+          <button className="bg-[#5EA4A4] hover:bg-[#4D9090] text-white font-bold py-3.5 px-16 rounded-xl transition-all uppercase text-[11px] tracking-widest shadow-md">
             View All
           </button>
         </div>
+
       </div>
     </section>
   );

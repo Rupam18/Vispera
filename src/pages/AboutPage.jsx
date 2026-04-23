@@ -1,6 +1,6 @@
 import Layout from "../components/layout/Layout";
 import AboutHero from "../components/about/AboutHero";
-import AboutIntro from "../components/about/AboutIntro";
+import About from "../components/home/About";
 import AboutStrategy from "../components/about/AboutStrategy";
 import VisionMission from "../components/about/VisionMission";
 import WhyVispera from "../components/about/WhyVispera";
@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <Layout>
       <AboutHero />
-      <AboutIntro />
+      <About showButton={false} />
       <AboutStrategy />
       <VisionMission />
       <WhyVispera />

@@ -1,44 +1,52 @@
 import { motion } from "framer-motion";
-import visionImg from "../../assets/images/our-vision.png";
-import missionImg from "../../assets/images/our-mission.png";
+import visionImg from "../../assets/images/ourvision.png";
+import missionImg from "../../assets/images/ourmission.png";
+import sectionBg from "../../assets/images/our-client-bg.png";
 
 export default function VisionMission() {
   return (
-    <section className="pt-0 pb-0" style={{ backgroundColor: "#F7F5F2" }}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
+    <section 
+      className="py-0" 
+      style={{ 
+        backgroundImage: `url(${sectionBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundColor: "#F7F5F2" 
+      }}
+    >
+      <div className="max-w-[1440px] mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:min-h-[307px] items-start">
 
           {/* Vision */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center text-center group"
+            className="flex flex-col items-center text-center group w-full"
           >
             <div className="relative mb-0">
               {/* Branding Blob Background */}
               <div className="absolute inset-0 bg-[#e0f1f1] rounded-full filter blur-2xl opacity-60 scale-150 -z-10 group-hover:scale-175 transition-transform duration-700" />
-              <div className="relative z-10 w-48 h-48 md:w-56 md:h-56">
-                <img src={visionImg} alt="Our Vision" className="w-full h-full object-contain" />
+              <div className="relative z-10 w-48 h-48 lg:w-[220px] lg:h-[220px]">
+                <img src={visionImg} alt="Our Vision layout graphic" className="w-full h-full object-contain drop-shadow-sm" />
               </div>
             </div>
             
-            <div className="relative inline-block mb-3">
-              <h3 className="text-xl md:text-23 font-bold uppercase tracking-[0.3em] text-[#0A374C] font-heading">
-                OUR VISION
+            <div className="relative inline-block mb-3 -mt-6 lg:-mt-10">
+              <h3 className="text-xl lg:text-[22px] font-bold uppercase tracking-[0.25em] font-heading">
+                <span className="text-[#0A374C]">OUR</span> <span className="text-[#5EA4A4]">VISION</span>
               </h3>
-              <div className="absolute -right-10 -top-1 w-8 h-8 opacity-40">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#5EA4A4" strokeWidth="2">
+              <div className="absolute -right-9 -top-1 w-7 h-7 opacity-40">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#5EA4A4" strokeWidth="2.5">
                   <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
                   <circle cx="12" cy="13" r="4"/>
                 </svg>
               </div>
             </div>
             
-            <p className="text-[#0A374C]/70 text-sm md:text-base leading-relaxed max-w-sm font-medium">
-              Our Vision Is To Empower Brands, Startups, Businesses, And Social
-              Organizations By Bringing Their Stories To Life Through Creativity,
-              Authenticity, And Innovation.
+            {/* Exactly 538px bounding width text block */}
+            <p className="text-[#0A374C]/80 text-[15px] lg:text-[16px] leading-[24px] max-w-[538px] w-full font-body font-medium capitalize">
+              Our vision is to empower brands, startups, businesses, and social organizations by bringing their stories to life through creativity, authenticity, and innovation.
             </p>
           </motion.div>
 
@@ -48,32 +56,30 @@ export default function VisionMission() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="flex flex-col items-center text-center group"
+            className="flex flex-col items-center text-center group w-full"
           >
             <div className="relative mb-0">
-              {/* Branding Blob Background */}
               <div className="absolute inset-0 bg-[#e0f1f1] rounded-full filter blur-2xl opacity-60 scale-150 -z-10 group-hover:scale-175 transition-transform duration-700" />
-              <div className="relative z-10 w-48 h-48 md:w-56 md:h-56">
-                <img src={missionImg} alt="Our Mission" className="w-full h-full object-contain" />
+              <div className="relative z-10 w-48 h-48 lg:w-[220px] lg:h-[220px]">
+                <img src={missionImg} alt="Our Mission layout graphic" className="w-full h-full object-contain drop-shadow-sm" />
               </div>
             </div>
 
-            <div className="relative inline-block mb-3">
-              <h3 className="text-xl md:text-23 font-bold uppercase tracking-[0.3em] text-[#0A374C] font-heading">
-                OUR MISSION
+            <div className="relative inline-block mb-3 -mt-6 lg:-mt-10">
+              <h3 className="text-xl lg:text-[22px] font-bold uppercase tracking-[0.25em] font-heading">
+                <span className="text-[#0A374C]">OUR</span> <span className="text-[#5EA4A4]">MISSION</span>
               </h3>
-              <div className="absolute -right-10 -top-1 w-8 h-8 opacity-40">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#5EA4A4" strokeWidth="2">
+              <div className="absolute -right-9 -top-1 w-7 h-7 opacity-40">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#5EA4A4" strokeWidth="2.5">
                   <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
                   <circle cx="12" cy="13" r="4"/>
                 </svg>
               </div>
             </div>
 
-            <p className="text-[#0A374C]/70 text-sm md:text-base leading-relaxed max-w-sm font-medium">
-              Our Mission Is To Use Our Expertise In Storytelling, Videography,
-              Photography, Digital Design, And Content Marketing To Help Brands
-              And Organizations Craft Authentic Narratives That Inspire And Engage.
+            {/* Exactly 538px bounding width text block */}
+            <p className="text-[#0A374C]/80 text-[15px] lg:text-[16px] leading-[24px] max-w-[538px] w-full font-body font-medium capitalize">
+              Our mission is to use our expertise in storytelling, videography, photography, digital design, and content marketing to help brands and organizations craft authentic narratives that inspire and engage.
             </p>
           </motion.div>
 

@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
-import logo from "../../assets/images/Logo.png";
-import footerBg from "../../assets/images/footer-img.png";
-import qrImg from "../../assets/images/Screenshot-2026-03-28-162900.png";
+import logo from "../../assets/images/transparent-logo.png";
+import desktopFooter from "../../assets/images/footer-img.png";
+import tabFooter from "../../assets/images/Tablet/footer.png";
+import mobileFooter from "../../assets/images/Mobile/footer-mobile.png";
+import footerScanner from "../../assets/images/qr.png";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -39,32 +41,46 @@ export default function Footer() {
         </svg>
       </div>
 
-      {/* Background image layer */}
+      {/* Background image layer - Responsive */}
       <div
-        className="absolute inset-0"
+        className="sm:hidden absolute inset-0"
         style={{
-          backgroundImage: `url(${footerBg})`,
+          backgroundImage: `url(${mobileFooter})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+      <div
+        className="hidden sm:block lg:hidden absolute inset-0"
+        style={{
+          backgroundImage: `url(${tabFooter})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+      <div
+        className="hidden lg:block absolute inset-0"
+        style={{
+          backgroundImage: `url(${desktopFooter})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       />
 
-      {/* Secondary color overlay */}
-      <div
-        className="absolute inset-0"
-        style={{ backgroundColor: "rgba(10,55,76,0.92)" }}
-      />
+
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-16 sm:pt-20 md:pt-28 lg:pt-40 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 
           {/* Col 1 — Brand */}
           <div className="space-y-5">
-            <Link to="/" className="inline-block">
+            <div className="inline-block">
               <img src={logo} alt="Vispera Studios" className="h-20 w-auto object-contain" />
-            </Link>
+            </div>
             <p className="text-white/90 text-sm leading-relaxed max-w-xs">
               We craft meaningful visual stories that inspire, connect, and
               create impact. From NGOs to purpose-driven brands, we bring
@@ -73,11 +89,11 @@ export default function Footer() {
           </div>
 
           {/* Col 2 — Quick Links */}
-          <div className="space-y-5 lg:pt-2">
+          <div className="space-y-5 lg:pt-2 sm:flex sm:flex-col sm:items-center lg:items-start">
             <h3 className="text-sm font-bold text-white uppercase tracking-widest">Quick Links</h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2.5 sm:text-center lg:text-left">
               {quickLinks.map((link) => (
-                <li key={link.href} className="flex items-center gap-2">
+                <li key={link.href} className="flex items-center gap-2 sm:justify-center lg:justify-start">
                   <span className="text-white/50 text-xs">•</span>
                   <Link
                     to={link.href}
@@ -122,9 +138,9 @@ export default function Footer() {
           </div>
 
           {/* Col 4 — CTA + QR */}
-          <div className="space-y-4 lg:pt-2">
+          <div className="space-y-4 lg:pt-2 flex flex-col items-start sm:items-center lg:items-center justify-start sm:justify-center lg:justify-center">
             <h3 className="text-base font-bold text-white">Have a story to tell?</h3>
-            <p className="text-white/85 text-sm leading-relaxed">
+            <p className="text-white/85 text-sm leading-relaxed text-left sm:text-center lg:text-center">
               Let's create something meaningful together.
             </p>
             <Link
@@ -133,13 +149,13 @@ export default function Footer() {
             >
               Start Your Project
             </Link>
-            <div className="flex items-start gap-3 pt-1">
+            <div className="flex flex-col sm:items-center lg:items-center items-start gap-3 pt-2">
               <img
-                src={qrImg}
+                src={footerScanner}
                 alt="QR Code"
-                className="w-16 h-16 object-cover rounded-lg shrink-0"
+                className="w-20 h-20 object-cover rounded-lg shrink-0"
               />
-              <p className="text-white/60 text-xs leading-relaxed mt-1">
+              <p className="text-white text-xs leading-relaxed sm:text-center lg:text-center text-left">
                 Scan to save our<br />contact details
               </p>
             </div>

@@ -1,5 +1,4 @@
 import HeaderBanner from "../common/HeaderBanner";
-import headerBg from "../../assets/images/header-bg.png";
 
 export default function ContactHero() {
   return (
