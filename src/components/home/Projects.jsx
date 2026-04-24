@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
 
 import ncpedpImg from "../../assets/images/NCPEDP-Javed-Abidi-Fellowship-on-Disability.png";
 import krushakImg from "../../assets/images/Krushak-Mitra-Agro-Services-Pvt-Ltd.png";
@@ -29,7 +30,7 @@ const projects = [
     client: "NCPEDP- National Centre For Promotion Of Employment For Disabled People",
     location: "6 States",
     overview: "The Film \"Redefining Disability And Inclusion: NCPEDP-Javed Abidi Fellowship\" Captures The Impactful Stories Of Young Leaders With Disabilities Who Are Shaping India's Future. Supported By The National Centre For Promotion Of Employment For Disabled People (NCPEDP), These Fellows Challenge Accessibility Barriers, Promote Inclusive Education, And Empower Marginalized Communities. Through Personal Journeys And Advocacy, They Influence Infrastructure And Design Standards, Address Digital Accessibility, And Combat Stigma. This Film Highlights NCPEDP's Mission To Create A New Generation Of Changemakers, Ensuring That Disability Rights Become A Lived Reality Across India.",
-    link: "https://www.youtube.com/watch?si=XPtEjwcZ2Frt_Rye&v=mUzWwi8ClQI&feature=youtu.be"
+    link: "https://youtu.be/fGfFEnbQNV0?si=xZINrSPTRd4M38j_"
   },
   {
     id: 2,
@@ -40,7 +41,7 @@ const projects = [
     client: "Krushak Mitra Agro Services Pvt. Ltd.",
     location: "Nashik District And Surrounding Regions",
     overview: "This Corporate Film Showcases The Transformative Work Of Krushak Mitra Agro Services Pvt. Ltd. In Strengthening Farming Communities Across Maharashtra. It Highlights Their Farmer-First Approach Through Timely Agri-Inputs, Expert Advisory, FPC Formation, And Market Linkages. Through Real Farmer Stories And On-Ground Interventions, The Film Captures How Krushak Mitra Is Turning Farmers Into Entrepreneurs, Enhancing Rural Livelihoods, And Promoting Sustainable Agricultural Practices.",
-    link: "https://www.youtube.com/watch?si=XPtEjwcZ2Frt_Rye&v=mUzWwi8ClQI&feature=youtu.be"
+    link: "https://www.youtube.com/watch?v=mUzWwi8ClQI"
   },
   {
     id: 3,
@@ -51,7 +52,7 @@ const projects = [
     client: "GIZ India",
     location: "Maharashtra And Andhra Pradesh",
     overview: "This Film Presents A Powerful Overview Of GIZ's Renewable Energy Initiatives Implemented Across Maharashtra And Andhra Pradesh, Showcasing The Tangible Impact Of Sustainable Technologies In Rural And Semi-Urban Landscapes. Through Real Life Stories, Field Visuals, And Expert Insights, The Film Captures How GIZ-Supported Solutions—Ranging From Solar Dryer Machines To Biogas Systems And Decentralized Energy Models—Are Transforming Lives, Improving Livelihoods, And Fostering Environmental Resilience. By Highlighting The Success Stories Of Local Communities, Institutions, And Entrepreneurs, The Film Not Only Documents The Scale And Innovation Of The Interventions But Also Reinforces The Potential Of Renewable Energy As A Catalyst For Inclusive Development And Climate Action In India.",
-    link: "https://www.youtube.com/watch?si=XPtEjwcZ2Frt_Rye&v=mUzWwi8ClQI&feature=youtu.be"
+    link: "https://www.youtube.com/watch?v=bZn8i6BcEvY"
   },
   {
     id: 4,
@@ -62,7 +63,7 @@ const projects = [
     client: "Unknown",
     location: "Unknown",
     overview: "This informative film provides a powerful introduction to the revitalization of water sources.",
-    link: "https://www.youtube.com/watch?si=XPtEjwcZ2Frt_Rye&v=mUzWwi8ClQI&feature=youtu.be"
+    link: "https://www.youtube.com/watch?v=mUzWwi8ClQI"
   },
   {
     id: 5,
@@ -73,18 +74,18 @@ const projects = [
     client: "Concern India Foundation",
     location: "Aurangabad Block",
     overview: "This Documentary, Titled \"Every Drop Counts,\" Showcases The Transformative Impact Of The Integrated Watershed Development Project Implemented By The Concern India Foundation. Spanning Across The Remote Villages Of Babhultel, Naygavhan, And Mahankalwadgaon, The Film Highlights The Community-Driven Efforts To Combat Water Scarcity, Enhance Agricultural Productivity, And Improve Livelihoods Through Sustainable Practices. Key Interventions Included The Desilting Of Percolation Tanks, Construction Of Recharge Shafts, And Provision Of Modern Irrigation Systems, Resulting In Significant Improvements In Water Storage Capacity And Agricultural Output. The Documentary Captures The Journey From Despair To Hope, Illustrating The Power Of Unity And Innovative Solutions In Creating Lasting Change.",
-    link: "https://www.youtube.com/watch?si=XPtEjwcZ2Frt_Rye&v=mUzWwi8ClQI&feature=youtu.be"
+    link: "https://youtu.be/ocxp4DhjoWc?si=JZ_FhmL1g50z6PPp"
   },
   {
     id: 6,
     title: "Green Innovation Centres for the Agriculture and Food Sector",
-    category: "Brand Films",
+    category: "Documentary",
     image: greenInnovImg,
-    badge: "Filmmaking",
+    badge: "Documentary",
     client: "GIZ India",
     year: "2024",
     overview: "Documented Renewable Energy Innovations In Maharashtra And Andhra Pradesh For The GIZ Project. Produced 150+ High-Quality Photographs, 6 Testimonies, 6 Interview Videos, And A 3-Minute Process Video. Ensured Consent From All Subjects And Provided Edited Media With Detailed Metadata",
-    link: "https://www.youtube.com/watch?si=XPtEjwcZ2Frt_Rye&v=mUzWwi8ClQI&feature=youtu.be",
+    link: "https://www.youtube.com/watch?v=bZn8i6BcEvY",
     gallery: [gizGallery1, gizGallery2, gizGallery3, gizGallery1, gizGallery2, gizGallery3]
   },
   {
@@ -95,7 +96,7 @@ const projects = [
     badge: "Corporate Film",
     client: "Sham Sundar Misal",
     location: "Nashik",
-    link: "https://www.youtube.com/watch?si=XPtEjwcZ2Frt_Rye&v=mUzWwi8ClQI&feature=youtu.be"
+    link: "https://www.youtube.com/watch?v=-ThOfyAu-qg"
   },
   {
     id: 8,
@@ -110,6 +111,7 @@ const projects = [
 ];
 
 export default function Projects() {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeGalleryIdx, setActiveGalleryIdx] = useState(null);
@@ -135,22 +137,46 @@ export default function Projects() {
       <section id="work" className="bg-bg-light overflow-hidden py-8 md:py-10">
         <div className="w-full px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto">
           {/* Header */}
-          <div className="flex flex-col items-center text-center gap-6 md:gap-8 mb-10 w-full">
-            <div className="space-y-1 relative w-full flex flex-col items-center">
-              <p className="text-[#5EA4A4] font-bold tracking-[0.35em] text-[11px] md:text-xs uppercase font-body text-center">OUR WORK</p>
-              <div className="relative inline-block">
-                <h2 className="text-3xl md:text-4xl lg:text-[1.5rem] font-bold text-[#0A374C] font-heading leading-tight z-10 text-center">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-8 mb-10 w-full">
+            <div className="relative flex flex-col items-center lg:items-start">
+              <p
+                className="text-[#5EA4A4] text-center lg:text-left w-full"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 600,
+                  fontSize: "16px",
+                  lineHeight: "42px",
+                  letterSpacing: "0",
+                  verticalAlign: "middle",
+                  textTransform: "uppercase"
+                }}
+              >
+                our work
+              </p>
+
+              <div className="relative inline-block mt-[-8px]">
+                <h2
+                  className="text-[#0A374C] relative z-10 text-center lg:text-left"
+                  style={{
+                    fontFamily: "'Playfair Display', serif",
+                    fontWeight: 600,
+                    fontSize: "32px",
+                    lineHeight: "42px",
+                    letterSpacing: "0.02em",
+                    verticalAlign: "middle"
+                  }}
+                >
                   Stories We've Told
                 </h2>
                 {/* Decorative Icon precisely overlapping the 'd' in Told */}
-                <div className="absolute -top-1 -right-4 w-7 h-7 opacity-80 z-20 pointer-events-none">
+                <div className="absolute top-0 -right-5 w-7 h-7 opacity-80 z-20 pointer-events-none">
                   <img src={headingBg} alt="" className="w-full h-full object-contain" />
                 </div>
               </div>
             </div>
 
             {/* Filter tabs */}
-            <div className="flex flex-wrap justify-center gap-2 md:gap-2.5 w-full mx-auto pb-2 md:pb-0 scrollbar-hide">
+            <div className="flex flex-wrap items-center justify-center lg:justify-end gap-2 md:gap-2.5 pb-2 lg:pb-0 scrollbar-hide flex-1">
               {categories.map((cat) => (
                 <button
                   key={cat}
@@ -185,7 +211,7 @@ export default function Projects() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.03 }}
-                  className={`group relative rounded-2xl overflow-hidden cursor-pointer aspect-[4/3] bg-gray-200 shadow-md ${index >= 4 && index < 6 ? 'hidden md:block' : ''} ${index >= 6 ? 'hidden lg:block' : ''}`}
+                  className={`group relative rounded-[12px] overflow-hidden cursor-pointer aspect-[304/237] bg-gray-200 shadow-md ${index >= 4 && index < 6 ? 'hidden md:block' : ''} ${index >= 6 ? 'hidden lg:block' : ''}`}
                 >
                   {/* Background Image */}
                   <img
@@ -203,16 +229,28 @@ export default function Projects() {
                   </div>
 
                   {/* Persistent Title Overlay at Bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#0A374C]/80 backdrop-blur-[2px] p-3 z-10 transition-all duration-500 group-hover:translate-y-full">
-                    <h3 className="text-white text-[10px] md:text-[11px] font-bold leading-tight line-clamp-2">
+                  <div
+                    className="absolute bottom-0 left-0 w-full bg-[#0A374C]/70 flex items-center px-4 z-10 transition-all duration-500 group-hover:translate-y-[120%]"
+                    style={{
+                      height: "46px",
+                      borderBottomLeftRadius: "12px",
+                      borderBottomRightRadius: "12px"
+                    }}
+                  >
+                    <h3 className="text-white text-[10px] md:text-[11px] font-bold leading-tight line-clamp-2 w-full text-center">
                       {project.title}
                     </h3>
                   </div>
 
-                  {/* Hover Action Button (Slides Up to Bottom) */}
-                  <div className="absolute -bottom-24 left-0 w-full flex justify-center pb-6 lg:pb-8 transition-all duration-500 ease-in-out group-hover:bottom-0 z-20">
-                    <button className="bg-[#5EA4A4] hover:bg-[#4D9090] text-[#0A374C] text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded shadow-lg">
-                      {project.isExternal ? "Visit Website" : "View Story"}
+                  {/* Hover Content Overlay (Centers Title & Button) */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 pointer-events-none group-hover:pointer-events-auto">
+                    <h3 className="text-white text-[13px] md:text-[15px] font-bold text-center leading-snug drop-shadow-md translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                      {project.title}
+                    </h3>
+                    <button
+                      className="absolute bottom-5 bg-[#5EA4A4] hover:bg-[#4D9090] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded-md shadow-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-150"
+                    >
+                      {project.isExternal ? "Visit Website" : ([4].includes(project.id) ? "Watch Video" : "View")}
                     </button>
                   </div>
                 </motion.div>
@@ -222,8 +260,21 @@ export default function Projects() {
 
           {/* View All Button */}
           <div className="flex justify-center mt-12 md:mt-16">
-            <button className="bg-[#5EA4A4] hover:bg-[#4D9090] text-white font-bold py-3.5 px-12 rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg uppercase text-[11px] tracking-[0.25em]">
-              View All
+            <button 
+              onClick={() => navigate("/our-work")}
+              className="bg-[#5EA4A4] hover:bg-[#4D9090] text-white transition-all transform hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center rounded-[8px]"
+              style={{
+                width: "180px",
+                height: "42px",
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 600,
+                fontSize: "16px",
+                lineHeight: "24px",
+                textAlign: "center",
+                textTransform: "capitalize"
+              }}
+            >
+              view all
             </button>
           </div>
         </div>
@@ -259,19 +310,27 @@ export default function Projects() {
             >
               <div className="flex flex-col lg:grid lg:grid-cols-[5.5fr_6.5fr] gap-8 lg:gap-10 items-stretch">
                 {/* Top/Left: Image Section */}
-                <div className="relative w-full h-full">
-                  <div className="absolute -top-[2px] left-6 lg:left-10 z-20">
-                    <div className="bg-[#5EA4A4] text-[#0A374C] text-[10px] lg:text-[12px] px-8 py-2.5 rounded-b-2xl shadow-lg font-bold min-w-[120px] text-center tracking-widest uppercase">
+                <div className="relative w-full h-full min-h-[300px] group">
+                  <div className="absolute top-0 left-10 lg:left-45 z-20">
+                    <div className="bg-[#5EA4A4] text-[#0A374C] text-[10px] lg:text-[12px] px-8 py-2.5 rounded-b-xl shadow-lg font-bold min-w-[120px] text-center tracking-widest capitalize">
                       {selectedProject.badge}
                     </div>
                   </div>
 
-                  <div className="rounded-[1.25rem] overflow-hidden border-[3px] border-[#5EA4A4] w-full h-full shadow-2xl bg-black/20 flex flex-col justify-center">
+                  <div className="relative rounded-[1.25rem] overflow-hidden border-2 border-white/80 w-full h-full shadow-2xl bg-[#0A374C]/20 flex flex-col justify-center">
                     <img
                       src={selectedProject.image}
                       alt={selectedProject.title}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    {/* Modal Video Play Button on Hover */}
+                    {[1, 2, 3, 4, 5, 7].includes(selectedProject.id) && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center shadow-2xl transform scale-90 group-hover:scale-100 transition-all duration-300">
+                          <Play className="w-8 h-8 md:w-10 md:h-10 text-[#0A374C] fill-[#0A374C] ml-1" />
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -307,7 +366,10 @@ export default function Projects() {
                   {/* Optional Video Button */}
                   {!selectedProject.gallery && (
                     <div className="mt-8 lg:mt-10 flex justify-center lg:justify-start">
-                      <button className="bg-[#5EA4A4] hover:bg-[#4D9090] text-white font-bold py-3.5 px-12 rounded-xl transition-all shadow-xl text-[10px] md:text-xs tracking-[0.2em] transform active:scale-95 uppercase">
+                      <button 
+                        onClick={() => window.open(selectedProject.link, "_blank", "noopener,noreferrer")}
+                        className="bg-[#5EA4A4] hover:bg-[#4D9090] text-white font-bold py-3.5 px-12 rounded-xl transition-all shadow-xl text-[10px] md:text-xs tracking-[0.2em] transform active:scale-95 uppercase"
+                      >
                         Watch Video
                       </button>
                     </div>

@@ -53,59 +53,76 @@ export default function About({ showButton = true }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full md:flex-1 flex flex-col items-center md:items-start justify-center text-center md:text-left px-6 md:pl-12 md:pr-0 z-20"
+            className="w-full md:flex-1 flex flex-col items-center justify-center text-center px-6 md:px-8 lg:px-12 z-20"
           >
-            <div className="w-full">
+            <div className="w-full flex flex-col items-center">
               
-              {/* Desktop / Tablet Quote */}
-              <div className="mb-4 relative hidden md:block">
+              {/* Unified Quote */}
+              <div className="mb-4 md:mb-6 w-full">
                 <p 
-                  className="font-bold leading-tight text-[#0A374C] font-heading"
-                  style={{ fontSize: "clamp(1.1rem, 2.4vw, 1.8rem)" }}
-                >
-                  <span className="text-gray-300 text-6xl md:text-7xl absolute -top-10 left-1/2 -translate-x-1/2 opacity-20 inline-block pointer-events-none font-serif">“</span>
-                  “We believe every story 
-                  <br />
-                  <span className="text-[#5EA4A4]">deserves to be told ”</span>
-                </p>
-              </div>
-
-              {/* Mobile Quote */}
-              <div className="mb-4 relative block md:hidden text-center mt-6">
-                <p 
-                  className="font-heading font-semibold"
+                  className="text-[#0A374C]"
                   style={{ 
-                    fontSize: "28px", 
-                    lineHeight: "38px",
-                    letterSpacing: "0%",
+                    fontFamily: "'Playfair Display', serif",
+                    fontWeight: 600,
+                    fontSize: "32px", 
+                    lineHeight: "42px",
+                    textAlign: "center",
+                    verticalAlign: "middle"
                   }}
                 >
-                  <span className="text-[#0A374C]">“ We believe every story</span>
-                  <br />
+                  “ We believe every story <br className="block md:hidden" />
                   <span className="text-[#5EA4A4]">deserves to be told ”</span>
                 </p>
               </div>
 
               {/* Subheading & Description */}
-              <div className="space-y-3">
-                <p className="text-[#0A374C] text-[13px] md:text-[15px] leading-relaxed">
-                  <span className="font-bold uppercase tracking-wide">Welcome To Vispera Studios Private Limited,</span>
-                  <span className="block text-[#0A374C]/80 mt-1 font-medium">Where Ideas Transform Into Powerful Stories.</span>
+              <div className="space-y-1 w-full max-w-[90%] md:max-w-full">
+                <p 
+                  className="text-[#0A374C]"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "16px",
+                    lineHeight: "28px",
+                    textAlign: "center",
+                    verticalAlign: "middle",
+                    textTransform: "capitalize"
+                  }}
+                >
+                  Welcome to Vispera Studios Private Limited,
                 </p>
 
-                <p className="text-[#0A374C]/70 text-[11px] md:text-[12px] lg:text-[13px] leading-relaxed font-medium">
-                  We Are A Passionate Team Of Storytellers, Filmmakers, Designers, And Digital Experts, 
-                  Helping Startups, Businesses, And Organizations Craft Their Digital Identity 
-                  Through Stunning Visuals And Authentic Narratives.
+                <p 
+                  className="text-[#0A374C]/80"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "16px",
+                    lineHeight: "28px",
+                    textAlign: "center",
+                    verticalAlign: "middle",
+                    textTransform: "capitalize"
+                  }}
+                >
+                  where ideas transform into powerful stories. We are a passionate team of storytellers, filmmakers, designers, and digital experts, helping startups, businesses, and organizations craft their digital identity through stunning visuals and authentic narratives
                 </p>
               </div>
 
-              {/* Button - Centered */}
               {showButton && (
-                <div className="mt-2 md:mt-4">
+                <div className="mt-6 md:mt-8">
                   <Link 
                     to="/about"
-                    className="px-12 py-3.5 bg-[#5EA4A4] text-white rounded-lg shadow-lg hover:bg-[#4D9090] transition-all transform hover:scale-105 active:scale-95 font-bold text-[11px] tracking-[0.2em] uppercase inline-block"
+                    className="px-12 py-3.5 bg-[#5EA4A4] text-white rounded-lg shadow-lg hover:bg-[#4D9090] transition-all transform hover:scale-105 active:scale-95 inline-block"
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontWeight: 500,
+                      fontSize: "16px",
+                      lineHeight: "24px",
+                      letterSpacing: "0",
+                      textAlign: "center",
+                      verticalAlign: "middle",
+                      textTransform: "capitalize"
+                    }}
                   >
                     Learn More
                   </Link>

@@ -3,6 +3,7 @@ import { clsx } from 'clsx';
 import { SectionHeading } from '../common';
 import testimonial1 from "../../assets/images/testimonial1.png";
 import testimonial2 from "../../assets/images/testimonial2.png";
+import headingBg from "../../assets/images/decoration-heading-bg.svg";
 
 const testimonialsData = [
   {
@@ -68,12 +69,23 @@ export default function Testimonials({
                </div>
             </div>
 
-            <SectionHeading
-              subtitle="TESTIMONIALS"
-              title="What Our Clients Say"
-              align="left"
-              className="[&_p]:text-secondary [&_h2]:text-white [&_h2]:text-2xl [&_h2]:lg:text-4xl [&_h2]:mb-8"
-            />
+            <div className="relative mb-6">
+              <SectionHeading
+                subtitle="TESTIMONIALS"
+                title="What Our Clients Say"
+                align="left"
+                className="[&_p]:text-secondary [&_h2]:text-white [&_h2]:text-2xl [&_h2]:lg:text-4xl [&_h2]:mb-8 relative z-10"
+              />
+              <div 
+                className="absolute top-4 left-[220px] md:left-[260px] lg:left-[320px] w-12 h-12 z-0 pointer-events-none"
+                style={{ 
+                  filter: "invert(61%) sepia(39%) saturate(420%) hue-rotate(131deg) brightness(150%) contrast(87%)",
+                  opacity:2
+                }}
+              >
+                <img src={headingBg} alt="" className="w-full h-full object-contain" />
+              </div>
+            </div>
             <p className="text-sm md:text-base leading-relaxed opacity-80 font-medium">
               We Work Closely With Organizations To Craft Authentic Visual Stories That Connect, Inspire, And Create Meaningful Impact.
             </p>

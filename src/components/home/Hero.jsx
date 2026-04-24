@@ -39,9 +39,28 @@ export default function Hero() {
 
           {/* Overlay on the edge of the hero banner */}
           <div className="absolute bottom-0 left-0 right-0 translate-y-[50%] z-20 flex justify-center w-full px-4 md:px-0">
-            <div className="bg-white/85 backdrop-blur-md py-4 px-6 md:px-12 w-full max-w-[88%] md:max-w-[90%] lg:max-w-4xl rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-white/40">
-              <p className="text-center text-[#1a1a1a] font-bold text-[10px] md:text-[13px] tracking-[0.2em] uppercase leading-relaxed">
-                WELCOME TO VISPERA STUDIOS, <br className="block md:hidden" /> A CREATIVE STUDIO FOR STORIES THAT MATTER
+            <div 
+              className="backdrop-blur-md flex justify-center items-center shadow-[0_8px_30px_rgb(0,0,0,0.08)] py-3 md:py-0 px-4"
+              style={{
+                width: '100%',
+                maxWidth: '1180px',
+                minHeight: '56px',
+                borderRadius: '8px',
+                backgroundColor: '#FFFFFFE5',
+                opacity: 1
+              }}
+            >
+              <p 
+                className="text-center text-[#1a1a1a] uppercase align-middle"
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontWeight: 800,
+                  fontSize: '22px',
+                  lineHeight: '20px',
+                  letterSpacing: '0.04em'
+                }}
+              >
+                Welcome to Vispera Studios, <br className="block md:hidden" /> A Creative Studio for Stories That Matter
               </p>
             </div>
           </div>

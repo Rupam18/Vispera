@@ -11,31 +11,36 @@ const teamData = [
     name: "Kishan Chandore",
     role: "Creative Director",
     img: team1,
-    bio: "With over six years of experience in documentary filmmaking, photography, and journalism, Kishan Chandore is a dedicated professional passionate about visual storytelling. As a Digital Content Creator and Communication Specialist, his skills span content creation, social media management, and video production. Kishan has conceptualized and produced impactful short films, documentaries, and educational videos for various projects, adeptly conducting photo documentation to capture key moments and tell compelling visual stories. Additionally, he has collaborated with project managers and coordinators to create informative newsletters, case studies, and project completion reports.\n\nDriven by a passion for social development and sustainable initiatives, Kishan is eager to contribute his expertise in content creation, social media management, and project coordination to organizations committed to making a positive impact."
+    bio: "With over six years of experience in documentary filmmaking, photography, and journalism, Kishan Chandore is a dedicated professional passionate about visual storytelling. As a Digital Content Creator and Communication Specialist, his skills span content creation, social media management, and video production. Kishan has conceptualized and produced impactful short films, documentaries, and educational videos for various projects, adeptly conducting photo documentation to capture key moments and tell compelling visual stories. Additionally, he has collaborated with project managers and coordinators to create informative newsletters, case studies, and project completion reports.\n\nDriven by a passion for social development and sustainable initiatives, Kishan is eager to contribute his expertise in content creation, social media management, and project coordination to organizations committed to making a positive impact.",
+    dims: { w: 834, h: 332 }
   },
   {
     name: "Akshay Chandorkar",
     role: "Managing Director",
     img: team2,
-    bio: "Akshay Chandorkar is one of the co-founders of The Vispera Studios and a multitalented individual with a variety of interests in the field of print media, web development, audio-visual production, color management, and editing. He holds an engineering degree in Printing Technology and Graphics Communication, and a Master's degree in Color Science from Rochester, New York.\n\nWith his expertise in these fields, he can provide a wide range of services, from writing and printing annual reports to designing websites. Akshay is also known for his quirky interests such as chess, astronomy, and theater, which he brings to his work, adding a unique perspective to his project. He is a great listener, and is always ready to bring the best ideas to the table for your next project. With his passion and expertise in print media, web development, and color science, Akshay is a valuable asset to The Vispera Studios team."
+    bio: "Akshay Chandorkar is one of the co-founders of The Vispera Studios and a multitalented individual with a variety of interests in the field of print media, web development, audio-visual production, color management, and editing. He holds an engineering degree in Printing Technology and Graphics Communication, and a Master's degree in Color Science from Rochester, New York.\n\nWith his expertise in these fields, he can provide a wide range of services, from writing and printing annual reports to designing websites. Akshay is also known for his quirky interests such as chess, astronomy, and theater, which he brings to his work, adding a unique perspective to his project. He is a great listener, and is always ready to bring the best ideas to the table for your next project. With his passion and expertise in print media, web development, and color science, Akshay is a valuable asset to The Vispera Studios team.",
+    dims: { w: 834, h: 332 }
   },
   {
     name: "Priyanka Kadam",
     role: "Content Writer",
     img: team4,
-    bio: "Priyanka is the backbone of The Vispera Studios when it comes to content creation. Her exceptional skills in content writing, report writing, and everything in between have made her an invaluable asset to our team.\n\nPriyanka holds a Bachelor's degree from the College of Engineering, Pune, an MBA in Rural Management from Anand, and an impressive degree in Public Policy from Germany. Her diverse educational background and passion for continuous learning enables her to craft compelling narratives and insightful reports that resonate with our audience and clients alike."
+    bio: "Priyanka is the backbone of The Vispera Studios when it comes to content creation. Her exceptional skills in content writing, report writing, and everything in between have made her an invaluable asset to our team.\n\nPriyanka holds a Bachelor's degree from the College of Engineering, Pune, an MBA in Rural Management from Anand, and an impressive degree in Public Policy from Germany. Her diverse educational background and passion for continuous learning enables her to craft compelling narratives and insightful reports that resonate with our audience and clients alike.",
+    dims: { w: 834, h: 263 }
   },
   {
     name: "Noman Syed",
     role: "Digital Marketing Expert",
     img: team5,
-    bio: "Meet Noman, our Digital Marketing Expert. A highly motivated and dedicated professional with over six years of combined experience in digital marketing and video production, Noman excels in PPC campaigns, social media management, content creation, Google Analytics, Google Ads, and Meta Ads.\n\nHe has a proven ability to drive traffic, generate leads, and manage cross-functional collaborations. Noman's expertise spans video production, direction, storytelling, digital marketing, and digital advertising. Proficient in the latest digital marketing trends and tools, he is committed to continuous learning and delivering quality content."
+    bio: "Meet Noman, our Digital Marketing Expert. A highly motivated and dedicated professional with over six years of combined experience in digital marketing and video production, Noman excels in PPC campaigns, social media management, content creation, Google Analytics, Google Ads, and Meta Ads.\n\nHe has a proven ability to drive traffic, generate leads, and manage cross-functional collaborations. Noman's expertise spans video production, direction, storytelling, digital marketing, and digital advertising. Proficient in the latest digital marketing trends and tools, he is committed to continuous learning and delivering quality content.",
+    dims: { w: 834, h: 269 }
   },
   {
     name: "Pandhari Kadam",
     role: "Sr. Motion Graphic Artist",
     img: team3,
-    bio: "Meet Pandhari Kadam, a seasoned graphic designer with over 16 years of experience. He excels in creating visually compelling designs using various software and tools. Throughout his career, Pandhari has contributed to multiple organizations, enhancing their visual communication through print and digital media, branding, and advertising.\n\nAs a key member of The Vispera Studios, he brings his extensive industry knowledge and creative flair to every project, ensuring exceptional design quality."
+    bio: "Meet Pandhari Kadam, a seasoned graphic designer with over 16 years of experience. He excels in creating visually compelling designs using various software and tools. Throughout his career, Pandhari has contributed to multiple organizations, enhancing their visual communication through print and digital media, branding, and advertising.\n\nAs a key member of The Vispera Studios, he brings his extensive industry knowledge and creative flair to every project, ensuring exceptional design quality.",
+    dims: { w: 834, h: 246 }
   },
 ];
 
@@ -152,32 +157,40 @@ function TeamModal({ member, onClose }) {
         initial={{ opacity: 0, scale: 0.95, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 30 }}
-        className="relative bg-white w-full max-w-5xl rounded-[20px] overflow-hidden shadow-2xl flex flex-col md:flex-row min-h-[500px]"
+        className="relative bg-white w-full rounded-[8px] overflow-hidden shadow-2xl flex flex-col md:flex-row cursor-default"
+        style={{ 
+          maxWidth: `${member.dims.w}px`, 
+          minHeight: `${member.dims.h}px`,
+          marginTop: "34px"
+        }}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 z-20 text-gray-400 hover:text-[#0A374C] transition-all hover:rotate-90 duration-300"
+          className="absolute top-4 right-4 z-20 text-gray-400 hover:text-[#0A374C] transition-all hover:rotate-90 duration-300"
         >
-          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
         {/* Left Section: Identity Card */}
-        <div className="w-full md:w-[35%] p-10 flex flex-col items-center justify-center text-center">
-          <div className="w-48 h-48 xl:w-56 xl:h-56 rounded-[15px] overflow-hidden mb-6 shadow-md border border-gray-100">
+        <div className="w-full md:w-[32%] p-6 flex flex-col items-center justify-center text-center bg-[#F7F5F2]/50 border-r border-gray-100">
+          <div className="w-32 h-32 xl:w-40 xl:h-40 rounded-[12px] overflow-hidden mb-4 shadow-sm border border-gray-100">
             <img src={member.img} alt={member.name} className="w-full h-full object-cover grayscale" />
           </div>
-          <h3 className="text-[#0A374C] font-bold text-2xl font-heading mb-1">{member.name}</h3>
-          <p className="text-[#5EA4A4] font-bold text-base font-heading">{member.role}</p>
+          <h3 className="text-[#0A374C] font-bold text-xl font-heading mb-0.5">{member.name}</h3>
+          <p className="text-[#5EA4A4] font-bold text-sm font-heading">{member.role}</p>
         </div>
 
         {/* Right Section: Deep Bio */}
-        <div className="w-full md:w-[65%] p-12 md:pl-0 flex items-center">
-          <div className="max-h-[450px] overflow-y-auto pr-8 custom-scrollbar space-y-6">
+        <div className="w-full md:w-[68%] p-8 flex items-center">
+          <div 
+            className="max-h-[300px] overflow-y-auto pr-6 custom-scrollbar space-y-4"
+            style={{ maxHeight: `${member.dims.h - 40}px` }}
+          >
             {member.bio.split('\n\n').map((para, i) => (
-              <p key={i} className="text-[#0A374C]/80 text-[13px] xl:text-[15px] leading-relaxed">
+              <p key={i} className="text-[#0A374C]/80 text-[13px] xl:text-[14px] leading-relaxed">
                 {para}
               </p>
             ))}

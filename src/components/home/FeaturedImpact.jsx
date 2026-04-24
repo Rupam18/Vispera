@@ -18,6 +18,7 @@ const stories = [
     location: "6 States",
     overview:
       'The Film "Redefining Disability And Inclusion: NCPEDP-Javed Abidi Fellowship" Captures The Impactful Stories Of Young Leaders With Disabilities Who Are Shaping India\'s Future. Supported By The National Centre For Promotion Of Employment For Disabled People (NCPEDP), These Fellows Challenge Accessibility Barriers, Promote Inclusive Education, And Empower Marginalized Communities. Through Personal Journeys And Advocacy, They Influence Infrastructure And Design Standards, Address Digital Accessibility, And Combat Stigma. This Film Highlights NCPEDP\'s Mission To Create A New Generation Of Changemakers, Ensuring That Disability Rights Become A Lived Reality Across India.',
+    link: "https://youtu.be/fGfFEnbQNV0?si=xZINrSPTRd4M38j_",
     image: ncpedpImg,
   },
   {
@@ -28,6 +29,7 @@ const stories = [
     location: "Khed, Pune Block",
     overview:
       ' "Shaping Futures: The WASH Project\'s Impact In Khed Block" Is A Documentary Film That Showcases The Transformative Effects Of The Water, Sanitation, And Hygiene (WASH) Project Implemented By Yuva Mitra In Collaboration With Tata Trusts And Tata AutoComp Systems. Set In Khed Block, Pune, The Film Highlights The Significant Improvements In School Sanitation Facilities And Menstrual Hygiene Management, Depicting How These Changes Have Enhanced Health, Education, And Overall Quality Of Life In The Community. Through Interviews, Project Implementation Footage, Educational Sessions, And Personal Testimonials, The Film Illustrates The Project\'s Success In Reducing Absenteeism, Empowering Students, And Fostering Sustainable Community Development.',
+    link: "https://www.youtube.com/watch?v=th8X9Hm_EBo",
     image: shapingImg,
   },
   {
@@ -38,6 +40,7 @@ const stories = [
     location: "Aurangabad Block",
     overview:
       'This Documentary, Titled "Every Drop Counts," Showcases The Transformative Impact Of The Integrated Watershed Development Project Implemented By The Concern India Foundation. Spanning Across The Remote Villages Of Babhultel, Naygavhan, And Mahankalwadgaon, The Film Highlights The Community-Driven Efforts To Combat Water Scarcity, Enhance Agricultural Productivity, And Improve Livelihoods Through Sustainable Practices. Key Interventions Included The Desilting Of Percolation Tanks, Construction Of Recharge Shafts, And Provision Of Modern Irrigation Systems, Resulting In Significant Improvements In Water Storage Capacity And Agricultural Output. The Documentary Captures The Journey From Despair To Hope, Illustrating The Power Of Unity And Innovative Solutions In Creating Lasting Change.',
+    link: "https://youtu.be/ocxp4DhjoWc?si=JZ_FhmL1g50z6PPp",
     image: everyDropImg,
   },
 ];
@@ -54,11 +57,37 @@ export default function FeaturedImpact() {
     <section className="pt-0 pb-6 md:pb-12 bg-bg-light overflow-hidden">
       <div className="w-full relative">
         {/* Header - Padded for readability */}
-        <div className="text-center mb-8 px-6 relative w-fit mx-auto">
-          <p className="text-[#5EA4A4] font-bold tracking-[0.50em] text-[10px] md:text-xs uppercase mb-1">FEATURED IMPACT</p>
-          <div className="relative inline-block">
-            <h3 className="text-3xl md:text-4xl font-bold text-[#0A374C] font-heading leading-tight relative z-10">Stories That Matter</h3>
-            <div className="absolute top-0 -right-[10px] md:top-[6px] md:-right-[14px] w-[30px] h-[30px] opacity-100 z-0 pointer-events-none">
+        <div className="text-center mb-8 px-6 relative w-full flex flex-col items-center">
+          <p 
+            className="text-[#5EA4A4] w-full text-center"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 600,
+              fontSize: "16px",
+              lineHeight: "42px",
+              textAlign: "center",
+              verticalAlign: "middle",
+              textTransform: "uppercase"
+            }}
+          >
+            FEATURED IMPACT
+          </p>
+          <div className="relative inline-block mt-[-8px]">
+            <h3 
+              className="text-[#0A374C] relative z-10 text-center"
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontWeight: 600,
+                fontSize: "32px",
+                lineHeight: "42px",
+                letterSpacing: "0.02em",
+                textAlign: "center",
+                verticalAlign: "middle"
+              }}
+            >
+              Stories That Matter
+            </h3>
+            <div className="absolute top-0 -right-5 w-7 h-7 opacity-80 z-0 pointer-events-none">
               <img src={headingBg} alt="" className="w-full h-full object-contain" />
             </div>
           </div>
@@ -137,8 +166,11 @@ export default function FeaturedImpact() {
                     </div>
                   </div>
 
-                  <div className="mt-8 lg:mt-0 flex justify-center lg:justify-start pb-12 md:pb-0">
-                    <button className="bg-[#5EA4A4] hover:bg-[#4D9090] text-white font-bold py-3 px-12 rounded-xl transition-all shadow-xl text-xs tracking-[0.2em] transform active:scale-95">
+                  <div className="mt-4 flex justify-center lg:justify-start pb-12 md:pb-0">
+                    <button 
+                      onClick={() => window.open(story.link, "_blank", "noopener,noreferrer")}
+                      className="bg-[#5EA4A4] hover:bg-[#4D9090] text-white font-bold py-3 px-12 rounded-xl transition-all shadow-xl text-xs tracking-[0.2em] transform active:scale-95"
+                    >
                       Watch Video
                     </button>
                   </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import contactImg from "../../assets/images/contact-us-img.png";
+import contactImg from "../../assets/images/contactus.png";
 import backgroundImg from "../../assets/images/2.png";
 import headingBg from "../../assets/images/decoration-heading-bg.svg";
 
@@ -22,7 +22,7 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-8">
-          
+
           {/* ── COL 1: Info ── */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -110,21 +110,13 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-col justify-end items-center h-full order-1 lg:order-2 mt-0 lg:mt-0 mb-10 sm:mb-16 lg:mb-0"
+            className="flex flex-col justify-center items-center h-full order-1 lg:order-2 mt-0 mb-10 lg:mb-0"
           >
-            <div
-              className="w-full max-w-[400px] lg:max-w-none relative shadow-xl border border-gray-200 h-[260px] md:h-[400px] lg:h-[340px] rounded-2xl"
-              style={{ 
-                backgroundImage: `url(${backgroundImg})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}
-            >
-              <div className="absolute inset-0 bg-primary/20 backdrop-blur-[2px] rounded-2xl" />
+            <div className="relative w-full max-w-[500px] lg:max-w-none transform transition-transform duration-700 hover:scale-[1.02]">
               <img
                 src={contactImg}
                 alt="Contact Vispera Studios"
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-full h-[145%] origin-bottom object-contain object-bottom scale-105 transform transition-transform duration-700"
+                className="w-full h-auto object-contain drop-shadow-2xl"
               />
             </div>
           </motion.div>

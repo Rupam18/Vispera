@@ -1,12 +1,12 @@
 import Layout from "../components/layout/Layout";
 import ContactHero from "../components/contact/ContactHero";
-import ContactForm from "../components/contact/ContactForm";
+import Contact from "../components/home/Contact";
 
 export default function ContactPage() {
   return (
     <Layout>
       <ContactHero />
-      <ContactForm />
+      <Contact />
     </Layout>
   );
 }
