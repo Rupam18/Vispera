@@ -38,15 +38,15 @@ export default function CTA() {
             <div className="relative inline-block mt-8 md:mt-2">
               {/* Camera Illustration Area */}
               <motion.div 
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="absolute -top-7 -left-1 md:-top-4 md:-left-16 pointer-events-none"
+                className="absolute -top-10 -left-2 md:-top-12 md:-left-4 pointer-events-none z-0"
               >
                 <img 
                   src={cameraIllustration} 
                   alt="" 
-                  className="w-10 md:w-12 lg:w-16 h-auto object-contain brightness-0 invert opacity-100" 
+                  className="w-12 md:w-16 lg:w-20 h-auto object-contain brightness-0 invert opacity-90" 
                 />
               </motion.div>
 

@@ -158,24 +158,33 @@ export default function Testimonials({
 
           {/* Mobile View - Figma Match */}
           <div className="md:hidden w-full px-4">
-            <div className="bg-[#66a9a9] rounded-2xl p-6 relative flex flex-col shadow-xl">
-              {/* Identity row */}
-              <div className="flex items-center gap-4 mb-6">
-                <img 
-                  src={currentTestimonial.image} 
-                  alt={currentTestimonial.name} 
-                  className="w-[72px] h-[72px] rounded-2xl object-cover shadow-md shrink-0" 
-                />
-                <div>
-                  <h4 className="text-white text-[15px] font-bold leading-snug">{currentTestimonial.name}</h4>
-                  <p className="text-white/90 text-[10px] font-medium tracking-wide uppercase mt-1">
-                    <span className="font-normal capitalize pr-1 text-white/80">Program</span>{currentTestimonial.title.replace('Program ', '')}
+            <div className="bg-[#66a9a9] rounded-2xl p-[17px] relative flex flex-col shadow-xl overflow-hidden mt-6">
+              {/* Identity header - side by side format */}
+              <div className="flex items-start gap-4 mb-6">
+                <div className="shrink-0">
+                  <img 
+                    src={currentTestimonial.image} 
+                    alt={currentTestimonial.name} 
+                    className="object-cover shadow-lg"
+                    style={{
+                      width: '130px',
+                      height: '98px',
+                      borderRadius: '12px'
+                    }}
+                  />
+                </div>
+                <div className="flex-1 pt-2">
+                  <h4 className="text-white text-[16px] font-bold leading-tight uppercase tracking-wide">
+                    {currentTestimonial.name}
+                  </h4>
+                  <p className="text-white/90 text-[10px] font-bold tracking-[0.1em] uppercase mt-2 leading-relaxed">
+                    {currentTestimonial.title}
                   </p>
                 </div>
               </div>
               
-              {/* Text block */}
-              <p className="text-white text-[12px] leading-[1.8] font-medium mb-10">
+              {/* Text block - Full width below */}
+              <p className="text-white text-[12px] leading-[1.8] font-medium mb-10 text-justify">
                 {currentTestimonial.quote}
               </p>
 

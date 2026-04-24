@@ -8,7 +8,7 @@ import aboutGroupImg from "../../assets/images/aboutGroup.png";
 
 export default function About({ showButton = true }) {
   return (
-    <section id="about" className="overflow-hidden relative py-8 md:py-12 lg:py-16" style={{ 
+    <section id="about" className="overflow-hidden relative py-8 md:py-12 lg:py-16" style={{
       backgroundImage: `url(${sectionBg})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center'
@@ -38,12 +38,12 @@ export default function About({ showButton = true }) {
 
             {/* Mobile Image Stack (Matches Figma) */}
             <div className="relative z-10 block md:hidden mb-4 mt-6 w-full px-4 text-center">
-               <div className="relative inline-block w-full max-w-[280px] mx-auto">
-                 <div className="w-full aspect-square rounded-full overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] bg-white">
-                   <img src={aboutMobileImg} className="w-full h-full object-cover scale-110" alt="Vispera mobile workspace" />
-                 </div>
-                 <img src={aboutGroupImg} className="absolute -bottom-6 -left-2 w-28 object-contain z-20" alt="Clapboard" />
-               </div>
+              <div className="relative inline-block w-full max-w-[280px] mx-auto">
+                <div className="w-full aspect-square rounded-full overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] bg-white">
+                  <img src={aboutMobileImg} className="w-full h-full object-cover scale-110" alt="Vispera mobile workspace" />
+                </div>
+                <img src={aboutGroupImg} className="absolute -bottom-6 -left-2 w-28 object-contain z-20" alt="Clapboard" />
+              </div>
             </div>
           </motion.div>
 
@@ -56,15 +56,15 @@ export default function About({ showButton = true }) {
             className="w-full md:flex-1 flex flex-col items-center justify-center text-center px-6 md:px-8 lg:px-12 z-20"
           >
             <div className="w-full flex flex-col items-center">
-              
+
               {/* Unified Quote */}
               <div className="mb-4 md:mb-6 w-full">
-                <p 
+                <p
                   className="text-[#0A374C]"
-                  style={{ 
+                  style={{
                     fontFamily: "'Playfair Display', serif",
                     fontWeight: 600,
-                    fontSize: "32px", 
+                    fontSize: "32px",
                     lineHeight: "42px",
                     textAlign: "center",
                     verticalAlign: "middle"
@@ -77,7 +77,7 @@ export default function About({ showButton = true }) {
 
               {/* Subheading & Description */}
               <div className="space-y-1 w-full max-w-[90%] md:max-w-full">
-                <p 
+                <p
                   className="text-[#0A374C]"
                   style={{
                     fontFamily: "'Inter', sans-serif",
@@ -92,7 +92,7 @@ export default function About({ showButton = true }) {
                   Welcome to Vispera Studios Private Limited,
                 </p>
 
-                <p 
+                <p
                   className="text-[#0A374C]/80"
                   style={{
                     fontFamily: "'Inter', sans-serif",
@@ -110,7 +110,7 @@ export default function About({ showButton = true }) {
 
               {showButton && (
                 <div className="mt-6 md:mt-8">
-                  <Link 
+                  <Link
                     to="/about"
                     className="px-12 py-3.5 bg-[#5EA4A4] text-white rounded-lg shadow-lg hover:bg-[#4D9090] transition-all transform hover:scale-105 active:scale-95 inline-block"
                     style={{

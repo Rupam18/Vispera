@@ -25,35 +25,35 @@ const awards = [
 
 export default function Awards() {
   return (
-    <section id="awards" className="bg-bg-light overflow-hidden py-8 md:py-12">
-      {/* Header - Outside the dark box on light background */}
-      <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24 mb-6 md:mb-10">
+    <section id="awards" className="bg-bg-light overflow-hidden py-10 md:py-16">
+      {/* Header - Optimized for Mobile/Desktop Typography */}
+      <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24 mb-12 md:mb-16">
         <div className="flex flex-col items-center relative">
           <p
             className="text-[#5EA4A4] w-full text-center"
             style={{
               fontFamily: "'Inter', sans-serif",
               fontWeight: 600,
-              fontSize: "16px",
-              lineHeight: "42px",
+              fontSize: "14px",
+              lineHeight: "24px",
               textAlign: "center",
-              verticalAlign: "middle",
-              textTransform: "uppercase"
+              textTransform: "uppercase",
+              letterSpacing: "0.1em"
             }}
           >
             AWARDS
           </p>
-          <div className="relative inline-block mt-[-8px]">
+          <div className="relative inline-block mt-1">
             <h2
               className="text-[#0A374C] relative z-10 text-center"
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 600,
-                fontSize: "32px",
+                fontSize: "28px",
+                mdFontSize: "32px", // CSS handles this via @media usually, I'll use reactive values or just classes
                 lineHeight: "42px",
                 letterSpacing: "0.02em",
-                textAlign: "center",
-                verticalAlign: "middle"
+                textAlign: "center"
               }}
             >
               Recognized for Our Work
@@ -65,37 +65,36 @@ export default function Awards() {
         </div>
       </div>
 
-      {/* The Awards Container - Dark Blue Rectangle with Background Image */}
+      {/* The Awards Container - Dark Blue Rectangle */}
       <div
-        className="w-full bg-[#0A374C] py-10 md:py-14 relative group"
+        className="w-full bg-[#0A374C] py-10 md:py-12 relative group"
         style={{
           backgroundImage: `url(${rewardBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
       >
-
-
-        <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16">
-            {/* Left: Award Illustration/Frame */}
+        <div className="max-w-[1440px] mx-auto px-6 md:px-16 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
+            
+            {/* Award Illustration/Frame - Left on Desktop, Bottom on Mobile/Tab */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="flex-shrink-0"
+              className="w-full lg:w-1/2 max-w-[626px] order-2 lg:order-1 mt-8 lg:mt-0"
             >
-              <div className="relative w-full max-w-[626px] aspect-[626/352] transform hover:scale-[1.02] transition-transform duration-500">
+              <div className="relative w-full aspect-[626/352] transform hover:scale-[1.01] transition-transform duration-700">
                 <img
                   src={rewardFrame}
-                  alt="Vispera Awards"
-                  className="w-full h-full object-contain drop-shadow-2xl"
+                  alt="Vispera Awards Showcase"
+                  className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
                 />
               </div>
             </motion.div>
 
-            {/* Right: Trophy Cards */}
-            <div className="flex flex-col sm:flex-row flex-wrap lg:flex-nowrap justify-center gap-6 items-center lg:mt-[48px]">
+            {/* Trophy Cards Section - Right on Desktop, Top on Mobile/Tab */}
+            <div className="flex flex-col md:flex-row lg:flex-nowrap justify-center gap-20 md:gap-4 lg:gap-6 items-center w-full lg:w-3/5 order-1 lg:order-2 md:mt-[10px] lg:mt-0 px-2 lg:px-0">
               {awards.map((award, index) => (
                 <motion.div
                   key={award.id}
@@ -103,27 +102,25 @@ export default function Awards() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="relative bg-[#5EA4A4] border border-white/10 shadow-xl flex flex-col items-center justify-center text-center group hover:brightness-105 transition-all shrink-0"
+                  className="relative bg-[#5EA4A4] border border-white/10 shadow-2xl flex flex-col items-center justify-center text-center group hover:brightness-105 transition-all w-full max-w-[344px] h-[140px] md:w-[203px] md:h-[140px] shrink-0"
                   style={{
-                    width: "203px",
-                    height: "198px",
                     borderRadius: "12px"
                   }}
                 >
                   {/* Overlapping Badge */}
-                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-16 h-16 sm:w-14 sm:h-14 bg-white rounded-full shadow-2xl flex items-center justify-center border-[5px] sm:border-4 border-[#0A374C] group-hover:scale-110 transition-transform z-10 p-[6px] sm:p-2">
+                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-16 h-16 bg-white rounded-full shadow-2xl flex items-center justify-center border-[5px] border-[#0A374C] group-hover:scale-110 transition-transform z-10 p-2">
                     <img src={award.icon} alt="Award Badge" className="w-full h-full object-contain" />
                   </div>
 
                   <p 
-                    className="text-white text-center"
+                    className="text-white text-center px-4"
                     style={{
                       fontFamily: "'Inter', sans-serif",
                       fontWeight: 600,
                       fontSize: "18px",
                       lineHeight: award.id === 2 ? "28px" : "24px",
                       textTransform: "capitalize",
-                      padding: "0 1rem"
+                      marginTop: "5px"
                     }}
                   >
                     {award.title}
@@ -131,6 +128,7 @@ export default function Awards() {
                 </motion.div>
               ))}
             </div>
+
           </div>
         </div>
       </div>

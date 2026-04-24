@@ -5,7 +5,7 @@ import heroMobileImg from "../../assets/images/Mobile/herosectionbanner.png";
 
 export default function Hero() {
   return (
-    <section className="bg-bg-light pt-[104px] lg:pt-[72px] pb-12 relative">
+    <section className="bg-white pt-[104px] lg:pt-[72px] pb-12 relative">
 
       {/* Hero image container */}
       <div className="px-8 md:px-16 mt-2 relative group">
@@ -39,19 +39,20 @@ export default function Hero() {
 
           {/* Overlay on the edge of the hero banner */}
           <div className="absolute bottom-0 left-0 right-0 translate-y-[50%] z-20 flex justify-center w-full px-4 md:px-0">
-            <div 
-              className="backdrop-blur-md flex justify-center items-center shadow-[0_8px_30px_rgb(0,0,0,0.08)] py-3 md:py-0 px-4"
+            <div
+              className="flex justify-center items-center shadow-[0_8px_30px_rgb(0,0,0,0.08)] py-3 md:py-0 px-4"
               style={{
                 width: '100%',
                 maxWidth: '1180px',
                 minHeight: '56px',
                 borderRadius: '8px',
-                backgroundColor: '#FFFFFFE5',
+                backgroundColor: '#FFFFFF',
                 opacity: 1
               }}
             >
-              <p 
-                className="text-center text-[#1a1a1a] uppercase align-middle"
+              {/* Desktop/Tablet version */}
+              <p
+                className="hidden md:block text-center text-[#1a1a1a] uppercase align-middle"
                 style={{
                   fontFamily: "'Playfair Display', serif",
                   fontWeight: 800,
@@ -60,8 +61,30 @@ export default function Hero() {
                   letterSpacing: '0.04em'
                 }}
               >
-                Welcome to Vispera Studios, <br className="block md:hidden" /> A Creative Studio for Stories That Matter
+                Welcome to Vispera Studios, A Creative Studio for Stories That Matter
               </p>
+
+              {/* Mobile version with exact Figma specs (358x69) - Forced 2-line layout */}
+              <div 
+                className="block md:hidden w-full max-w-[300px] flex items-center justify-center p-2"
+                style={{
+                  height: '5px',
+                  borderRadius: '5px', 
+                }}
+              >
+                <p 
+                  className="text text-[#0A374C] "
+                  style={{
+                    fontFamily: "'Playfair Display', serif",
+                    fontWeight: 800,
+                    fontSize: '10px',
+                    lineHeight: '15px',
+                    letterSpacing: '0.04em'
+                  }}
+                >
+                  WELCOME TO VISPERA STUDIOS, A CREATIVE STUDIO FOR STORIES THAT MATTER
+                </p>
+              </div>
             </div>
           </div>
         </div>

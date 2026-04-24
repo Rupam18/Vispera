@@ -8,7 +8,7 @@ export default function Contact() {
     <section id="contact" className="py-8 md:py-12" style={{ backgroundColor: "#F5F3EF" }}>
       <div className="max-w-[1280px] mx-auto px-8">
         {/* Tablet / Mobile Centered Header */}
-        <div className="lg:hidden text-center mb-10 max-w-2xl mx-auto">
+        <div className="lg:hidden text-center mb-4 max-w-2xl mx-auto">
           <p className="text-[#5EA4A4] text-xs font-semibold tracking-widest uppercase mb-2">
             Always Here to Connect
           </p>
@@ -110,7 +110,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-col justify-center items-center h-full order-1 lg:order-2 mt-0 mb-10 lg:mb-0"
+            className="flex flex-col justify-center items-center h-full order-1 lg:order-2 -mt-2 mb-8 lg:mb-0"
           >
             <div className="relative w-full max-w-[500px] lg:max-w-none transform transition-transform duration-700 hover:scale-[1.02]">
               <img
