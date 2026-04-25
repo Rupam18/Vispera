@@ -5,7 +5,7 @@ import personImg from "../../assets/images/quote-img-1.png";
 export default function Manifesto() {
   return (
     <section className="py-6 bg-bg-light">
-      <div className="w-full px-6 md:px-12 lg:px-20">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-0">
         
         <div className="relative flex items-center justify-start md:justify-between 
           bg-[#d9f3f2] 
@@ -30,7 +30,7 @@ export default function Manifesto() {
           <div className="w-[55%] md:w-auto md:flex-1 lg:flex-none lg:w-[60%] text-center md:px-8 z-20 relative shrink-0">
             <h2 className="text-[#0A374C] 
               font-bold 
-              text-[11px] sm:text-[14px] md:text-sm lg:text-[18px] 
+              text-[11px] sm:text-[200px] md:text-sm lg:text-[20px] 
               leading-[18px] sm:leading-[24px] md:leading-[1.6]
               tracking-[0.01em] md:tracking-wide 
               uppercase
@@ -45,7 +45,7 @@ export default function Manifesto() {
             <img
               src={personImg}
               alt="Photographer"
-              className="absolute bottom-0 right-0 md:right-4 lg:right-0 w-full h-full md:w-auto md:h-[145%] lg:h-[150%] object-contain object-right-bottom md:object-cover max-w-none origin-bottom-right"
+              className="absolute bottom-0 right-0 md:right-4 lg:right-[-20px] w-full h-full md:w-auto md:h-[145%] lg:h-[150%] object-contain object-right-bottom md:object-cover max-w-none origin-bottom-right transition-transform translate-x-2 md:translate-x-0 lg:translate-x-4"
             />
           </div>
 

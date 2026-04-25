@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import visionImg from "../../assets/images/ourvision.png";
 import missionImg from "../../assets/images/ourmission.png";
 import sectionBg from "../../assets/images/our-client-bg.png";
+import headingBg from "../../assets/images/decoration-heading-bg.svg";
 
 export default function VisionMission() {
   return (
@@ -14,7 +15,7 @@ export default function VisionMission() {
         backgroundColor: "#F7F5F2" 
       }}
     >
-      <div className="max-w-[1440px] mx-auto px-6">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:min-h-[307px] items-start">
 
           {/* Vision */}
@@ -33,14 +34,11 @@ export default function VisionMission() {
             </div>
             
             <div className="relative inline-block mb-3 -mt-6 lg:-mt-10">
-              <h3 className="text-xl lg:text-[22px] font-bold uppercase tracking-[0.25em] font-heading">
+              <h3 className="relative z-10 text-xl lg:text-[22px] font-bold uppercase tracking-[0.25em] font-heading">
                 <span className="text-[#0A374C]">OUR</span> <span className="text-[#5EA4A4]">VISION</span>
               </h3>
-              <div className="absolute -right-9 -top-1 w-7 h-7 opacity-40">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#5EA4A4" strokeWidth="2.5">
-                  <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
-                  <circle cx="12" cy="13" r="4"/>
-                </svg>
+              <div className="absolute -right-3 -top-1.5 w-7 h-7 opacity-100 pointer-events-none z-0">
+                <img src={headingBg} alt="" className="w-full h-full object-contain" />
               </div>
             </div>
             
@@ -66,19 +64,16 @@ export default function VisionMission() {
             </div>
 
             <div className="relative inline-block mb-3 -mt-6 lg:-mt-10">
-              <h3 className="text-xl lg:text-[22px] font-bold uppercase tracking-[0.25em] font-heading">
+              <h3 className="relative z-10 text-xl lg:text-[22px] font-bold uppercase tracking-[0.25em] font-heading">
                 <span className="text-[#0A374C]">OUR</span> <span className="text-[#5EA4A4]">MISSION</span>
               </h3>
-              <div className="absolute -right-9 -top-1 w-7 h-7 opacity-40">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#5EA4A4" strokeWidth="2.5">
-                  <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
-                  <circle cx="12" cy="13" r="4"/>
-                </svg>
+              <div className="absolute -right-3 -top-1.5 w-7 h-7 opacity-100 pointer-events-none z-0">
+                <img src={headingBg} alt="" className="w-full h-full object-contain" />
               </div>
             </div>
 
             {/* Exactly 538px bounding width text block */}
-            <p className="text-[#0A374C]/80 text-[15px] lg:text-[16px] leading-[24px] max-w-[538px] w-full font-body font-medium capitalize">
+            <p className="text-[#0A374C]/80 text-[15px] lg:text-[15px] leading-[24px] max-w-[538px] w-full font-body font-medium capitalize">
               Our mission is to use our expertise in storytelling, videography, photography, digital design, and content marketing to help brands and organizations craft authentic narratives that inspire and engage.
             </p>
           </motion.div>

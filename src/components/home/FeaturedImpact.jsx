@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { WatchVideoButton } from "../common";
 import ncpedpImg from "../../assets/images/NCPEDP-Javed-Abidi-Fellowship-on-Disability.png";
 import gizImg from "../../assets/images/GIZ-India-doc-img1.png";
 import everyDropImg from "../../assets/images/service-img-9.png";
@@ -54,7 +55,7 @@ export default function FeaturedImpact() {
   const story = stories[current];
 
   return (
-    <section className="pt-0 pb-6 md:pb-12 bg-bg-light overflow-hidden">
+    <section id="impact" className="pt-0 pb-6 md:pb-12 bg-bg-light overflow-hidden">
       <div className="w-full relative">
         {/* Header - Padded for readability */}
         <div className="text-center mb-8 px-6 relative w-full flex flex-col items-center">
@@ -109,7 +110,7 @@ export default function FeaturedImpact() {
               transition={{ duration: 0.5 }}
               className="w-full h-full relative z-10"
             >
-              <div className="max-w-[1440px] mx-auto px-12 md:px-20 lg:px-28 py-8 md:py-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
+              <div className="w-full mx-auto px-6 md:px-16 lg:px-24 py-8 md:py-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
 
                 {/* Image Area - Card Style */}
                 <div className="lg:col-span-6 relative">
@@ -123,7 +124,7 @@ export default function FeaturedImpact() {
                     </div>
                   </div>
 
-                  <div className="relative rounded-[1.5rem] overflow-hidden shadow-2xl border-[3px] border-[#5EA4A4] group h-full">
+                  <div className="relative rounded-[2rem] overflow-hidden border-[6px] border-[#5EA4A4] shadow-2xl aspect-[3/2] md:aspect-video lg:aspect-[3/2] h-auto flex items-center justify-center group">
                     <img
                       src={story.image}
                       alt={story.title}
@@ -131,7 +132,9 @@ export default function FeaturedImpact() {
                     />
                     {/* Hover Overlay */}
                     <a
-                      href="#"
+                      href={story.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="absolute inset-0 bg-black/20 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center z-20 cursor-pointer"
                     >
                       <div className="w-14 h-14 md:w-16 md:h-16 bg-white text-[#5EA4A4] rounded-full flex items-center justify-center shadow-2xl transform transition-all duration-500 scale-90 group-hover:scale-100">
@@ -158,7 +161,14 @@ export default function FeaturedImpact() {
                         <span className="text-white/90 text-sm md:text-base leading-relaxed">{story.location}</span>
                       </p>
                       <div className="pt-1">
-                        <p className="text-white/90 text-sm md:text-[15px] leading-relaxed font-light">
+                        <p 
+                          className="text-white/90 text-[15px] leading-[30px] font-semibold"
+                          style={{
+                            fontFamily: "'Inter', sans-serif",
+                            textAlign: "justify",
+                            textTransform: "capitalize",
+                          }}
+                        >
                           <span className="font-bold text-white mr-2">• Project Overview:</span>
                           {story.overview}
                         </p>
@@ -167,12 +177,9 @@ export default function FeaturedImpact() {
                   </div>
 
                   <div className="mt-4 flex justify-center lg:justify-start pb-12 md:pb-0">
-                    <button 
+                    <WatchVideoButton 
                       onClick={() => window.open(story.link, "_blank", "noopener,noreferrer")}
-                      className="bg-[#5EA4A4] hover:bg-[#4D9090] text-white font-bold py-3 px-12 rounded-xl transition-all shadow-xl text-xs tracking-[0.2em] transform active:scale-95"
-                    >
-                      Watch Video
-                    </button>
+                    />
                   </div>
                 </div>
               </div>

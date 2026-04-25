@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { StartProjectButton } from "../common";
 import logo from "../../assets/images/transparent-logo.png";
 import desktopFooter from "../../assets/images/footer-img.png";
 import tabFooter from "../../assets/images/Tablet/footer.png";
@@ -25,7 +26,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden">
+    <footer className="relative overflow-hidden" style={{ fontFamily: "'Inter', sans-serif" }}>
 
       {/* Wave shape SVG — sits on top of the section below */}
       <div style={{ backgroundColor: "#F7F5F2", lineHeight: 0 }}>
@@ -143,12 +144,11 @@ export default function Footer() {
             <p className="text-white/85 text-sm leading-relaxed text-left sm:text-center lg:text-center">
               Let's create something meaningful together.
             </p>
-            <Link
-              to="/contact"
-              className="inline-block bg-[#0A374C] hover:bg-[#0A374C] text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-300"
-            >
-              Start Your Project
-            </Link>
+            <StartProjectButton 
+              variant="dark"
+              className="!rounded-lg"
+              style={{ padding: "10px 20px" }}
+            />
             <div className="flex flex-col sm:items-center lg:items-center items-start gap-3 pt-2">
               <img
                 src={footerScanner}
@@ -165,11 +165,11 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
-          className="mt-10 pt-5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/60"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.2)" }}
+          className="mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-[15px] font-semibold text-white/80"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.15)" }}
         >
           <p>© {currentYear} Vispera Studios. All rights reserved.</p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-2">
             <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
             <a href="/sitemap" className="hover:text-white transition-colors">Sitemap</a>

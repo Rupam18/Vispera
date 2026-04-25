@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/images/transparent-logo.png";
+import { StartProjectButton } from "../common";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -25,7 +26,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm h-[88px] flex items-center">
+    <nav className="fixed top-0 left-0 w-full z-50 shadow-sm h-[88px] flex items-center" style={{ backgroundColor: "#F7F5F2" }}>
 
       {/* Main navbar row */}
       <div className="w-full px-8 md:px-16">
@@ -56,19 +57,11 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA button */}
-          <Link
-            to="/contact"
-            className="hidden lg:inline-block text-white font-bold rounded-lg transition-all duration-300 hover:opacity-90 shadow-sm"
-            style={{
-              backgroundColor: "#0A374C",
-              fontSize: "13px",
-              padding: "14px 32px",
-              letterSpacing: "0.05em"
-            }}
-          >
-            Start Your Project
-          </Link>
+          <StartProjectButton 
+            variant="dark"
+            className="!hidden lg:!inline-block !rounded-lg"
+            style={{ fontSize: "13px", padding: "14px 32px" }}
+          />
 
           {/* Mobile/Tablet toggle — visible below lg */}
           <button
@@ -87,7 +80,8 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="absolute top-full left-0 w-full bg-white shadow-lg px-6 py-5 lg:hidden"
+            className="absolute top-full left-0 w-full shadow-lg px-6 py-5 lg:hidden"
+            style={{ backgroundColor: "#F7F5F2" }}
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -100,14 +94,12 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Link
-                to="/contact"
-                className="inline-block text-center text-white text-sm font-semibold px-6 py-3 rounded-lg mt-2"
-                style={{ backgroundColor: "#1a3a3a" }}
+              <StartProjectButton 
+                variant="dark"
+                className="w-full !rounded-lg"
+                style={{ backgroundColor: "#1a3a3a" }} 
                 onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Start Your Project
-              </Link>
+              />
             </div>
           </motion.div>
         )}

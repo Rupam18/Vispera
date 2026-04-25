@@ -8,7 +8,7 @@ import aboutGroupImg from "../../assets/images/aboutGroup.png";
 
 export default function About({ showButton = true }) {
   return (
-    <section id="about" className="overflow-hidden relative py-8 md:py-12 lg:py-16" style={{
+    <section id="about" className="overflow-hidden relative py-4 md:py-6 lg:py-8" style={{
       backgroundImage: `url(${sectionBg})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center'
@@ -64,13 +64,13 @@ export default function About({ showButton = true }) {
                   style={{
                     fontFamily: "'Playfair Display', serif",
                     fontWeight: 600,
-                    fontSize: "32px",
-                    lineHeight: "42px",
+                    fontSize: "42px",
+                    lineHeight: "52px",
                     textAlign: "center",
                     verticalAlign: "middle"
                   }}
                 >
-                  “ We believe every story <br className="block md:hidden" />
+                  “ We believe every story <br />
                   <span className="text-[#5EA4A4]">deserves to be told ”</span>
                 </p>
               </div>
@@ -112,7 +112,7 @@ export default function About({ showButton = true }) {
                 <div className="mt-6 md:mt-8">
                   <Link
                     to="/about"
-                    className="px-12 py-3.5 bg-[#5EA4A4] text-white rounded-lg shadow-lg hover:bg-[#4D9090] transition-all transform hover:scale-105 active:scale-95 inline-block"
+                    className="px-12 py-3.5 bg-[#5EA4A4] text-white rounded-lg shadow-lg hover:bg-[#0A374C] transition-all transform hover:scale-105 active:scale-95 inline-block"
                     style={{
                       fontFamily: "'Inter', sans-serif",
                       fontWeight: 500,

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { ViewAllButton } from "../common";
 import headingBg from "../../assets/images/decoration-heading-bg.svg";
 import cardDecorationBg from "../../assets/images/Group39737.png";
 
@@ -67,14 +68,23 @@ const LogoItem = ({ client, h = "h-12 md:h-14" }) => (
   </div>
 );
 
+import sectionBg from "../../assets/images/our-client-bg.png";
+
 export default function Clients() {
   const navigate = useNavigate();
   return (
-    <section id="clients" className="bg-bg-light pt-2 pb-8 md:pt-4 md:pb-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
+    <section id="clients" className="pt-2 pb-8 md:pt-4 md:pb-12 overflow-hidden relative" style={{ 
+      backgroundImage: `url(${sectionBg})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }}>
+      {/* Subtle Texture Overlay */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:24px_24px]" />
+      
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-14">
 
         {/* Header */}
-        <div className="flex flex-col items-center mb-8 relative">
+        <div className="flex flex-col items-center mb-2 relative">
           <p 
             className="text-[#5EA4A4] w-full text-center"
             style={{
@@ -113,18 +123,22 @@ export default function Clients() {
         {/* ============================================================
             DESKTOP VIEW (lg:flex) - STRICTLY UNTOUCHED ORIGINAL GRID
            ============================================================ */}
-        <div className="hidden lg:flex flex-col gap-0">
+        <div className="hidden lg:flex flex-col gap-0 max-w-[1300px] mx-auto">
           {/* Top Row - 5 Logos */}
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-10 border-b border-gray-100 pb-8">
-            {topRow.map((c) => (
-              <LogoItem key={c.name} client={c} h="h-12 md:h-15" />
+          <div className="flex flex-wrap items-center justify-between border-b border-gray-100 pb-6 px-2">
+            {topRow.map((c, idx) => (
+              <LogoItem 
+                key={c.name} 
+                client={c} 
+                h={idx === 4 ? "h-14 md:h-30" : "h-12 md:h-18"} 
+              />
             ))}
           </div>
 
           {/* Middle Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center py-2">
             {/* Left Col - 3 Logos */}
-            <div className="col-span-3 flex flex-col items-center gap-10">
+            <div className="col-span-3 flex flex-col items-center gap-6">
               {leftCol.map((c) => (
                 <LogoItem key={c.name} client={c} h="h-12 md:h-22" />
               ))}
@@ -135,22 +149,22 @@ export default function Clients() {
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="col-span-6 bg-[#5EA4A480] border-2 border-[#0A374C] rounded-3xl px-10 py-6 md:px-12 md:py-8 text-center relative shadow-sm"
+              className="col-span-6 bg-[#5EA4A480] border-2 border-[#0A374C] rounded-3xl px-8 py-5 md:px-10 md:py-6 text-center relative shadow-sm scale-100"
             >
-              <p className="text-[#0A374C] text-lg md:text-xl font-medium leading-[1.6]">
+              <p className="text-[#0A374C] text-lg md:text-xl font-medium leading-[1.5]">
                 “ Behind every story is a partnership that <br />
                 matters. We've had the privilege of working with <br />
                 organizations that are shaping change, capturing <br />
                 their journeys through visuals that inform, <br />
                 inspire, and connect. ”
               </p>
-              <div className="absolute bottom-2 right-4 md:bottom-0 md:right-1 w-16 h-18 md:w-20 md:h-20 opacity-80">
+              <div className="absolute bottom-2 right-4 md:bottom-2 md:right-2 w-16 h-18 md:w-20 md:h-20 opacity-80">
                 <img src={cardDecorationBg} alt="" className="w-full h-full object-contain" />
               </div>
             </motion.div>
 
             {/* Right Col - 3 Logos */}
-            <div className="col-span-3 flex flex-col items-center gap-10">
+            <div className="col-span-3 flex flex-col items-center gap-6">
               {rightCol.map((c) => (
                 <LogoItem key={c.name} client={c} h="h-12 md:h-22" />
               ))}
@@ -158,9 +172,13 @@ export default function Clients() {
           </div>
 
           {/* Bottom Row - 6 Logos */}
-          <div className="flex flex-wrap items-center justify-between gap-8 md:gap-12 pt-8 border-t border-gray-100">
-            {bottomRow.map((c) => (
-              <LogoItem key={c.name} client={c} h="h-18 md:h-28" />
+          <div className="flex flex-wrap items-center justify-between pt-2 border-t border-gray-100 px-2">
+            {bottomRow.map((c, idx) => (
+              <LogoItem 
+                key={c.name} 
+                client={c} 
+                h={idx === 2 ? "h-24 md:h-40" : idx < 4 ? "h-20 md:h-28" : "h-16 md:h-22"} 
+              />
             ))}
           </div>
         </div>
@@ -274,24 +292,10 @@ export default function Clients() {
           </div>
         </div>
 
-        {/* View All Button */}
-        <div className="flex justify-center mt-12">
-          <button 
+        <div className="flex justify-center mt-12 pb-4">
+          <ViewAllButton 
             onClick={() => navigate("/clients")}
-            className="bg-[#5EA4A4] hover:bg-[#4D9090] text-white transition-all transform hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center rounded-[8px]"
-            style={{
-              width: "180px",
-              height: "42px",
-              fontFamily: "'Inter', sans-serif",
-              fontWeight: 600,
-              fontSize: "16px",
-              lineHeight: "24px",
-              textAlign: "center",
-              textTransform: "capitalize"
-            }}
-          >
-            view all
-          </button>
+          />
         </div>
 
       </div>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { StartProjectButton } from "../common";
 import ctaBg from "../../assets/images/start-your-project-img.png";
 import ctaBgTablet from "../../assets/images/cta.png";
 import cameraIllustration from "../../assets/images/about-us-camera.png";
@@ -61,9 +62,7 @@ export default function CTA() {
             </p>
 
             <div className="pt-2 md:pt-4 w-full flex justify-center md:justify-start">
-              <button className="bg-[#5EA4A4] hover:bg-[#4D9090] text-white font-bold py-3.5 md:py-3.5 px-10 md:px-10 rounded-xl transition-all shadow-lg text-[13px] md:text-base uppercase tracking-wider">
-                Start Your Project
-              </button>
+              <StartProjectButton />
             </div>
           </motion.div>
         </div>

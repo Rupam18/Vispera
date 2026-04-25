@@ -5,6 +5,7 @@ import team2 from "../../assets/images/our-team-2.jpg";
 import team3 from "../../assets/images/our-team-3.jpg";
 import team4 from "../../assets/images/our-team-4.jpg";
 import team5 from "../../assets/images/our-team-5.jpg";
+import headingBg from "../../assets/images/decoration-heading-bg.svg";
 
 const teamData = [
   {
@@ -49,7 +50,7 @@ export default function MeetTeam() {
 
   return (
     <section className="pt-16 md:pt-20 pb-24 md:pb-32 relative overflow-hidden" style={{ backgroundColor: "#F7F5F2" }}>
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 relative z-10">
 
         {/* Header */}
         <div className="relative w-fit mx-auto mb-16">
@@ -57,15 +58,12 @@ export default function MeetTeam() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-[#0A374C] font-heading text-center"
+            className="relative z-10 text-4xl md:text-5xl lg:text-[32px] font-bold text-[#0A374C] font-heading text-center"
           >
             Meet Our Team
           </motion.h2>
-          <div className="absolute -right-10 -top-1 w-10 h-10 opacity-30">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#5EA4A4" strokeWidth="2">
-              <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" />
-              <circle cx="12" cy="13" r="4" />
-            </svg>
+          <div className="absolute -right-3 -top-2 w-9 h-9 opacity-100 pointer-events-none z-0">
+            <img src={headingBg} alt="" className="w-full h-full object-contain" />
           </div>
         </div>
 
@@ -153,50 +151,47 @@ function TeamModal({ member, onClose }) {
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
       />
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 30 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.95, y: 30 }}
-        className="relative bg-white w-full rounded-[8px] overflow-hidden shadow-2xl flex flex-col md:flex-row cursor-default"
-        style={{ 
-          maxWidth: `${member.dims.w}px`, 
-          minHeight: `${member.dims.h}px`,
-          marginTop: "34px"
-        }}
-      >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-20 text-gray-400 hover:text-[#0A374C] transition-all hover:rotate-90 duration-300"
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.95, y: 30 }}
+          className="relative bg-white w-full rounded-[8px] overflow-hidden shadow-2xl flex flex-col md:flex-row cursor-default"
+          style={{ 
+            maxWidth: '920px', 
+            minHeight: '400px',
+            marginTop: "34px"
+          }}
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-
-        {/* Left Section: Identity Card */}
-        <div className="w-full md:w-[32%] p-6 flex flex-col items-center justify-center text-center bg-[#F7F5F2]/50 border-r border-gray-100">
-          <div className="w-32 h-32 xl:w-40 xl:h-40 rounded-[12px] overflow-hidden mb-4 shadow-sm border border-gray-100">
-            <img src={member.img} alt={member.name} className="w-full h-full object-cover grayscale" />
-          </div>
-          <h3 className="text-[#0A374C] font-bold text-xl font-heading mb-0.5">{member.name}</h3>
-          <p className="text-[#5EA4A4] font-bold text-sm font-heading">{member.role}</p>
-        </div>
-
-        {/* Right Section: Deep Bio */}
-        <div className="w-full md:w-[68%] p-8 flex items-center">
-          <div 
-            className="max-h-[300px] overflow-y-auto pr-6 custom-scrollbar space-y-4"
-            style={{ maxHeight: `${member.dims.h - 40}px` }}
+          {/* Close Button */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 z-40 text-white md:text-gray-400 hover:text-[#0A374C] transition-all hover:rotate-90 duration-300"
           >
-            {member.bio.split('\n\n').map((para, i) => (
-              <p key={i} className="text-[#0A374C]/80 text-[13px] xl:text-[14px] leading-relaxed">
-                {para}
-              </p>
-            ))}
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+  
+          {/* Left Section: Identity Card */}
+          <div className="w-full md:w-[35%] p-8 flex flex-col items-center justify-center text-center bg-[#F7F5F2]/30 border-r border-gray-100 relative">
+            <div className="w-40 h-40 xl:w-48 xl:h-48 rounded-[12px] overflow-hidden mb-6 shadow-md border border-gray-100">
+              <img src={member.img} alt={member.name} className="w-full h-full object-cover grayscale" />
+            </div>
+            <h3 className="text-[#0A374C] font-bold text-2xl font-heading mb-1">{member.name}</h3>
+            <p className="text-[#5EA4A4] font-bold text-sm uppercase tracking-widest">{member.role}</p>
           </div>
-        </div>
-      </motion.div>
+  
+          {/* Right Section: Deep Bio */}
+          <div className="w-full md:w-[65%] p-10 flex items-center">
+            <div className="space-y-6">
+              {member.bio.split('\n\n').map((para, i) => (
+                <p key={i} className="text-[#0A374C] text-[14px] xl:text-[15px] leading-[26px] font-medium text-justify">
+                  {para}
+                </p>
+              ))}
+            </div>
+          </div>
+        </motion.div>
     </div>
   );
 }

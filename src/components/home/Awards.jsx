@@ -27,7 +27,7 @@ export default function Awards() {
   return (
     <section id="awards" className="bg-bg-light overflow-hidden py-10 md:py-16">
       {/* Header - Optimized for Mobile/Desktop Typography */}
-      <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24 mb-12 md:mb-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24 mb-6 md:mb-8">
         <div className="flex flex-col items-center relative">
           <p
             className="text-[#5EA4A4] w-full text-center"
@@ -67,7 +67,7 @@ export default function Awards() {
 
       {/* The Awards Container - Dark Blue Rectangle */}
       <div
-        className="w-full bg-[#0A374C] py-10 md:py-12 relative group"
+        className="w-full bg-[#0A374C] py-6 md:py-8 relative group"
         style={{
           backgroundImage: `url(${rewardBg})`,
           backgroundSize: 'cover',
@@ -76,7 +76,7 @@ export default function Awards() {
       >
         <div className="max-w-[1440px] mx-auto px-6 md:px-16 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
-            
+
             {/* Award Illustration/Frame - Left on Desktop, Bottom on Mobile/Tab */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -112,7 +112,7 @@ export default function Awards() {
                     <img src={award.icon} alt="Award Badge" className="w-full h-full object-contain" />
                   </div>
 
-                  <p 
+                  <p
                     className="text-white text-center px-4"
                     style={{
                       fontFamily: "'Inter', sans-serif",

@@ -9,7 +9,7 @@ const testimonialsData = [
   {
     id: 1,
     quote:
-      "We work closely with organizations to craft authentic visual stories that connect, inspire, and create meaningful impact. Their ability to capture real stories from the ground is exceptional. The final output was not just a film, but a powerful narrative that moved people.",
+      "We work closely with organizations to craft authentic visual stories that connect, inspire, and create meaningful impact. \nTheir ability to capture real stories from the ground is exceptional. The final output was not just a film, but a powerful narrative that moved people.",
     name: "Rohit Deshmukh",
     title: "Program Director, TATA Trusts",
     image: testimonial1,
@@ -17,9 +17,9 @@ const testimonialsData = [
   {
     id: 2,
     quote:
-      "Vispera Studios brought our vision to life with incredible precision and creativity. Their team understood our mission deeply and translated it into a visual story that resonated with our audience across all platforms.",
-    name: "Priya Sharma",
-    title: "Communications Head, GIZ India",
+      "From concept to execution, the team was incredibly professional. They understood our vision and transformed it into compelling visual storytelling.\nThe photography and films created by Vispera Studios helped us build a stronger emotional connection with our audience and stakeholders.",
+    name: "Anjali Kulkarni",
+    title: "Communication Head, Lokatmika Fondation",
     image: testimonial2,
   },
 ];
@@ -45,7 +45,7 @@ export default function Testimonials({
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className={clsx('py-8 md:py-10 lg:py-28 overflow-hidden bg-white', className)}>
+    <section id="testimonials" className={clsx('pb-8 md:pb-10 lg:pb-28 pt-0 overflow-hidden', className)} style={{ backgroundColor: '#F3F0EF' }}>
       <div className="w-full">
         {/* Section Heading - Mobile */}
         <div className="lg:hidden mb-6 md:mb-8 px-6">
@@ -56,44 +56,40 @@ export default function Testimonials({
           />
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-stretch">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-stretch">
 
           {/* Left Side - Identity Card (Starts from left edge) */}
-          <div className="hidden lg:flex lg:w-[35%] bg-primary text-white rounded-r-[2rem] lg:rounded-l-none p-10 lg:pl-24 flex-col justify-center relative overflow-hidden shadow-2xl">
-            {/* Pattern Decoration */}
-            <div className="absolute top-0 right-0 p-6 opacity-10">
-               <div className="grid grid-cols-4 gap-2">
-                 {Array.from({ length: 16 }).map((_, i) => (
-                   <div key={i} className="w-1 h-1 bg-white rounded-full" />
-                 ))}
-               </div>
-            </div>
+          <div className="hidden lg:flex lg:w-[30%] bg-primary text-white rounded-r-[2rem] lg:rounded-l-none p-10 lg:pl-16 flex-col justify-center relative overflow-hidden shadow-2xl">
+
 
             <div className="relative mb-6">
               <SectionHeading
                 subtitle="TESTIMONIALS"
                 title="What Our Clients Say"
                 align="left"
-                className="[&_p]:text-secondary [&_h2]:text-white [&_h2]:text-2xl [&_h2]:lg:text-4xl [&_h2]:mb-8 relative z-10"
+                className="[&_p]:text-secondary [&_h2]:text-white [&_h2]:text-2xl [&_h2]:lg:text-4xl [&_h2]:mb-1 relative z-10"
               />
-              <div 
+              <div
                 className="absolute top-4 left-[220px] md:left-[260px] lg:left-[320px] w-12 h-12 z-0 pointer-events-none"
-                style={{ 
+                style={{
                   filter: "invert(61%) sepia(39%) saturate(420%) hue-rotate(131deg) brightness(150%) contrast(87%)",
-                  opacity:2
+                  opacity: 2
                 }}
               >
                 <img src={headingBg} alt="" className="w-full h-full object-contain" />
               </div>
             </div>
-            <p className="text-sm md:text-base leading-relaxed opacity-80 font-medium">
+            <p
+              className="text-white text-base leading-6 opacity-90 font-medium tracking-[0.02em] text-justify"
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            >
               We Work Closely With Organizations To Craft Authentic Visual Stories That Connect, Inspire, And Create Meaningful Impact.
             </p>
           </div>
 
           {/* Right Side - Interactive Carousel (Desktop/Tablet) */}
           <div className="hidden md:block w-full lg:w-2/3 relative">
-            <div className="flex flex-col md:flex-row gap-12 lg:gap-16 items-center h-full">
+            <div className="flex flex-col md:flex-row gap-8 lg:gap-8 items-center h-full">
 
               {/* Image Box with Floating Overlap */}
               <div className="relative flex-shrink-0">
@@ -106,13 +102,7 @@ export default function Testimonials({
                       alt={currentTestimonial.name}
                       className="w-full h-full rounded-[1.25rem] object-cover shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
                     />
-                    
-                    {/* Floating Quote Icon */}
-                    <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-secondary shadow-xl z-30">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                      </svg>
-                    </div>
+
                   </div>
                 </div>
 
@@ -135,13 +125,21 @@ export default function Testimonials({
               </div>
 
               {/* Textual Content Section */}
-              <div className="flex-1 pl-12 md:pl-20 lg:pl-32 pr-2">
-                <p className="text-primary/80 text-sm md:text-base lg:text-lg leading-relaxed mb-10 font-medium italic max-w-[580px]">
+              <div className="flex-1 pl-4 md:pl-16 lg:pl-32 pr-2">
+                <p
+                  className="text-primary text-base leading-6 mb-10 font-medium text-justify tracking-[0.02em] max-w-[580px] whitespace-pre-line"
+                  style={{ fontFamily: "'Inter', sans-serif" }}
+                >
                   {currentTestimonial.quote}
                 </p>
 
-                <div className="flex items-center gap-6">
-                  <div className="w-[3px] h-12 bg-secondary rounded-full" />
+                <div className="flex items-center gap-5">
+                  {/* Quote Icon Square Beside Author */}
+                  <div className="w-10 h-10 md:w-11 md:h-11 bg-secondary/10 rounded-lg flex items-center justify-center text-secondary shrink-0">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
+                  </div>
                   <div>
                     <h4 className="text-primary text-xl md:text-2xl font-bold tracking-tight">
                       {currentTestimonial.name}
@@ -162,9 +160,9 @@ export default function Testimonials({
               {/* Identity header - side by side format */}
               <div className="flex items-start gap-4 mb-6">
                 <div className="shrink-0">
-                  <img 
-                    src={currentTestimonial.image} 
-                    alt={currentTestimonial.name} 
+                  <img
+                    src={currentTestimonial.image}
+                    alt={currentTestimonial.name}
                     className="object-cover shadow-lg"
                     style={{
                       width: '130px',
@@ -182,9 +180,12 @@ export default function Testimonials({
                   </p>
                 </div>
               </div>
-              
+
               {/* Text block - Full width below */}
-              <p className="text-white text-[12px] leading-[1.8] font-medium mb-10 text-justify">
+              <p
+                className="text-white text-base leading-6 font-medium mb-10 text-justify tracking-[0.02em]"
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              >
                 {currentTestimonial.quote}
               </p>
 
@@ -199,15 +200,14 @@ export default function Testimonials({
                     <ChevronRightIcon className="w-5 h-5 mr-0.5" />
                   </button>
                 </div>
-                
+
                 {/* Dots */}
                 <div className="flex gap-2">
                   {testimonials.map((_, idx) => (
-                    <div 
-                      key={idx} 
-                      className={`w-[5px] h-[5px] rounded-full transition-colors ${
-                        currentIndex === idx ? 'bg-[#0A374C]' : 'bg-[#0A374C]/30'
-                      }`} 
+                    <div
+                      key={idx}
+                      className={`w-[5px] h-[5px] rounded-full transition-colors ${currentIndex === idx ? 'bg-[#0A374C]' : 'bg-[#0A374C]/30'
+                        }`}
                     />
                   ))}
                   {/* Figma screenshot shows 3 dots but array has 2, rendering 3rd fake dot for fidelity */}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ViewButton, WatchVideoButton, ViewAllButton } from "../common";
 
 import ncpedpImg from "../../assets/images/NCPEDP-Javed-Abidi-Fellowship-on-Disability.png";
 import krushakImg from "../../assets/images/Krushak-Mitra-Agro-Services-Pvt-Ltd.png";
@@ -135,9 +136,9 @@ export default function Projects() {
   return (
     <>
       <section id="work" className="bg-bg-light overflow-hidden py-8 md:py-10">
-        <div className="w-full px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto">
+        <div className="w-full px-4 md:px-8 lg:px-12 max-w-[1600px] mx-auto">
           {/* Header */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-8 mb-10 w-full">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-8 mb-8 w-full">
             <div className="relative flex flex-col items-center lg:items-start">
               <p
                 className="text-[#5EA4A4] text-center lg:text-left w-full"
@@ -193,89 +194,85 @@ export default function Projects() {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <AnimatePresence mode="popLayout">
-              {filtered.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  layout
-                  onClick={() => {
-                    if (project.isExternal) {
-                      window.open(project.link, "_blank", "noopener,noreferrer");
-                    } else {
-                      setSelectedProject(project);
-                    }
-                  }}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.03 }}
-                  className={`group relative rounded-[12px] overflow-hidden cursor-pointer aspect-[304/237] bg-gray-200 shadow-md ${index >= 4 && index < 6 ? 'hidden md:block' : ''} ${index >= 6 ? 'hidden lg:block' : ''}`}
-                >
-                  {/* Background Image */}
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-
-                  {/* Primary Overlay on Hover */}
-                  <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[5]" />
-
-                  {/* Top Centered Tag (Slides Down) - Frosted Glass Effect */}
-                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 px-6 py-2 bg-white/25 backdrop-blur-md border border-white/20 text-white text-[9px] font-bold uppercase tracking-[0.2em] transition-all duration-500 ease-in-out group-hover:top-0 z-20 rounded-b-lg shadow-sm">
-                    {project.badge || project.category}
-                  </div>
-
-                  {/* Persistent Title Overlay at Bottom */}
-                  <div
-                    className="absolute bottom-0 left-0 w-full bg-[#0A374C]/70 flex items-center px-4 z-10 transition-all duration-500 group-hover:translate-y-[120%]"
-                    style={{
-                      height: "46px",
-                      borderBottomLeftRadius: "12px",
-                      borderBottomRightRadius: "12px"
-                    }}
-                  >
-                    <h3 className="text-white text-[10px] md:text-[11px] font-bold leading-tight line-clamp-2 w-full text-center">
-                      {project.title}
-                    </h3>
-                  </div>
-
-                  {/* Hover Content Overlay (Centers Title & Button) */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 pointer-events-none group-hover:pointer-events-auto">
-                    <h3 className="text-white text-[13px] md:text-[15px] font-bold text-center leading-snug drop-shadow-md translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                      {project.title}
-                    </h3>
-                    <button
-                      className="absolute bottom-5 bg-[#5EA4A4] hover:bg-[#4D9090] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded-md shadow-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-150"
+          <div className="min-h-[300px]">
+            {filtered.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <AnimatePresence mode="popLayout">
+                  {filtered.map((project, index) => (
+                    <motion.div
+                      key={project.id}
+                      layout
+                      onClick={() => {
+                        if (project.isExternal) {
+                          window.open(project.link, "_blank", "noopener,noreferrer");
+                        } else {
+                          setSelectedProject(project);
+                        }
+                      }}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: index * 0.03 }}
+                      className={`group relative rounded-[12px] overflow-hidden cursor-pointer aspect-[304/237] bg-gray-200 shadow-md ${index >= 4 && index < 6 ? 'hidden md:block' : ''} ${index >= 6 ? 'hidden lg:block' : ''}`}
                     >
-                      {project.isExternal ? "Visit Website" : ([4].includes(project.id) ? "Watch Video" : "View")}
-                    </button>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+                      {/* Background Image */}
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+
+                      {/* Primary Overlay on Hover */}
+                      <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[5]" />
+
+                      {/* Top Centered Tag (Slides Down) - Frosted Glass Effect */}
+                      <div className="absolute -top-12 left-1/2 -translate-x-1/2 px-6 py-2 bg-white/25 backdrop-blur-md border border-white/20 text-white text-[9px] font-bold uppercase tracking-[0.2em] transition-all duration-500 ease-in-out group-hover:top-0 z-20 rounded-b-lg shadow-sm">
+                        {project.badge || project.category}
+                      </div>
+
+                      {/* Persistent Title Overlay at Bottom */}
+                      <div
+                        className="absolute bottom-0 left-0 w-full bg-[#0A374C]/70 flex items-center px-4 z-10 transition-all duration-500 group-hover:translate-y-[120%]"
+                        style={{
+                          height: "46px",
+                          borderBottomLeftRadius: "12px",
+                          borderBottomRightRadius: "12px"
+                        }}
+                      >
+                        <h3 className="text-white text-[10px] md:text-[11px] font-bold leading-tight line-clamp-2 w-full text-center">
+                          {project.title}
+                        </h3>
+                      </div>
+
+                      {/* Hover Content Overlay (Centers Title & Button) */}
+                      <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 pointer-events-none group-hover:pointer-events-auto">
+                        <h3 className="text-white text-[13px] md:text-[15px] font-bold text-center leading-snug drop-shadow-md translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                          {project.title}
+                        </h3>
+                        <ViewButton
+                          label={project.isExternal ? "Visit Website" : ([4].includes(project.id) ? "Watch Video" : "View")}
+                          className="absolute bottom-5 !py-2.5 !px-8 !rounded-md translate-y-4 group-hover:translate-y-0"
+                        />
+                      </div>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+              </div>
+            ) : (
+              <div className="flex flex-col items-center justify-center py-20 text-center">
+                <p className="text-[#0A374C]/60 italic font-medium text-lg">
+                  There are no short content available!
+                </p>
+              </div>
+            )}
           </div>
 
           {/* View All Button */}
-          <div className="flex justify-center mt-12 md:mt-16">
-            <button 
+          <div className="flex justify-center pt-8 md:pt-12 pb-4">
+            <ViewAllButton
               onClick={() => navigate("/our-work")}
-              className="bg-[#5EA4A4] hover:bg-[#4D9090] text-white transition-all transform hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center rounded-[8px]"
-              style={{
-                width: "180px",
-                height: "42px",
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 600,
-                fontSize: "16px",
-                lineHeight: "24px",
-                textAlign: "center",
-                textTransform: "capitalize"
-              }}
-            >
-              view all
-            </button>
+            />
           </div>
         </div>
       </section>
@@ -366,12 +363,9 @@ export default function Projects() {
                   {/* Optional Video Button */}
                   {!selectedProject.gallery && (
                     <div className="mt-8 lg:mt-10 flex justify-center lg:justify-start">
-                      <button 
+                      <WatchVideoButton
                         onClick={() => window.open(selectedProject.link, "_blank", "noopener,noreferrer")}
-                        className="bg-[#5EA4A4] hover:bg-[#4D9090] text-white font-bold py-3.5 px-12 rounded-xl transition-all shadow-xl text-[10px] md:text-xs tracking-[0.2em] transform active:scale-95 uppercase"
-                      >
-                        Watch Video
-                      </button>
+                      />
                     </div>
                   )}
 

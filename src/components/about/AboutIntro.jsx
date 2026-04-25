@@ -4,11 +4,11 @@ import leftImg from "../../assets/images/Group-39917.png";
 export default function AboutIntro() {
   return (
     <section className="py-8 md:py-12 overflow-hidden" style={{ backgroundColor: "#F7F5F2" }}>
-      <div className="max-w-[1240px] mx-auto px-6">
-        
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24">
+
         {/* Tablet/Desktop: Side-by-Side | Mobile: Stacked */}
         <div className="flex flex-col md:flex-row items-center md:items-stretch md:justify-center gap-8 md:gap-16">
-          
+
           {/* Left: Floating Circular Composition */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -16,17 +16,17 @@ export default function AboutIntro() {
             viewport={{ once: true }}
             className="relative w-full max-w-[280px] md:max-w-[380px] lg:max-w-[460px] shrink-0"
           >
-             {/* Artistic blob background */}
-             <div 
-               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-30 pointer-events-none"
-               style={{
-                 background: "radial-gradient(circle, #5EA4A4 0%, transparent 70%)",
-                 filter: "blur(40px)",
-                 borderRadius: "50%"
-               }}
-             />
-             
-             <img
+            {/* Artistic blob background */}
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-30 pointer-events-none"
+              style={{
+                background: "radial-gradient(circle, #5EA4A4 0%, transparent 70%)",
+                filter: "blur(40px)",
+                borderRadius: "50%"
+              }}
+            />
+
+            <img
               src={leftImg}
               alt="Creative workspace"
               className="relative z-10 w-full h-auto object-contain"
@@ -60,15 +60,7 @@ export default function AboutIntro() {
               </div>
             </div>
 
-            <div className="mt-8 md:mt-0">
-              <a
-                href="#"
-                className="inline-block text-white text-[12px] font-bold tracking-widest px-10 py-3.5 rounded-full transition-all duration-300 hover:scale-105 shadow-md"
-                style={{ backgroundColor: "#5EA4A4" }}
-              >
-                Learn More
-              </a>
-            </div>
+            {/* Button removed as per user request for About page visibility */}
           </motion.div>
 
         </div>

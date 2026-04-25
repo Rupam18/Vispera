@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { ViewAllButton } from "../common";
 import s1 from "../../assets/images/service1-illustration.png";
 import s2 from "../../assets/images/service2-illustration.png";
 import s3 from "../../assets/images/service3-illustration.png";
@@ -20,8 +21,8 @@ const services = [
 export default function Services() {
   const navigate = useNavigate();
   return (
-    <section id="services" className="py-2 md:py-4" style={{ backgroundColor: "#F7F5F2" }}>
-      <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
+    <section id="services" className="py-2 md:py-8" style={{ backgroundColor: "#F7F5F2" }}>
+      <div className="max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12">
 
         <div className="flex flex-col items-center mb-10 relative">
           <p
@@ -71,22 +72,9 @@ export default function Services() {
 
         {/* View All */}
         <div className="flex justify-center mt-8 pb-4">
-          <button 
+          <ViewAllButton 
             onClick={() => navigate("/services")}
-            className="bg-[#5EA4A4] hover:bg-[#4D9090] text-white transition-all transform hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center rounded-[8px]"
-            style={{
-              width: "180px",
-              height: "42px",
-              fontFamily: "'Inter', sans-serif",
-              fontWeight: 600,
-              fontSize: "16px",
-              lineHeight: "24px",
-              textAlign: "center",
-              textTransform: "capitalize"
-            }}
-          >
-            view all
-          </button>
+          />
         </div>
 
       </div>
