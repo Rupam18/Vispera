@@ -177,19 +177,38 @@ export default function Projects() {
             </div>
 
             {/* Filter tabs */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-end gap-2 md:gap-2.5 pb-2 lg:pb-0 scrollbar-hide flex-1">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-4 md:px-6 py-2.5 rounded-full text-[9px] md:text-[10px] lg:text-xs font-bold tracking-wider transition-all duration-300 border font-body whitespace-nowrap ${activeCategory === cat
-                    ? "bg-[#0A374C] text-white border-[#0A374C] shadow-md"
-                    : "bg-white text-gray-400 border-gray-200 hover:border-[#5EA4A4] hover:text-[#5EA4A4]"
-                    }`}
-                >
-                  {cat}
-                </button>
-              ))}
+            <div className="flex flex-wrap items-center justify-center lg:justify-end gap-x-2 gap-y-3 pb-2 lg:pb-0 w-full lg:w-auto">
+              {/* Row 1: First 3 Categories */}
+              <div className="flex items-center justify-center gap-2 w-full lg:w-auto">
+                {categories.slice(0, 3).map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className={`px-3 md:px-6 py-2.5 rounded-full text-[9px] md:text-[10px] lg:text-xs font-bold tracking-wider transition-all duration-300 border font-body whitespace-nowrap ${activeCategory === cat
+                      ? "bg-[#0A374C] text-white border-[#0A374C] shadow-md"
+                      : "bg-white text-gray-400 border-gray-200 hover:border-[#5EA4A4] hover:text-[#5EA4A4]"
+                      }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+
+              {/* Row 2: Remaining 2 Categories (Centered below on mobile) */}
+              <div className="flex items-center justify-center gap-2 w-full lg:w-auto">
+                {categories.slice(3).map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className={`px-4 md:px-6 py-2.5 rounded-full text-[9px] md:text-[10px] lg:text-xs font-bold tracking-wider transition-all duration-300 border font-body whitespace-nowrap ${activeCategory === cat
+                      ? "bg-[#0A374C] text-white border-[#0A374C] shadow-md"
+                      : "bg-white text-gray-400 border-gray-200 hover:border-[#5EA4A4] hover:text-[#5EA4A4]"
+                      }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
