@@ -71,7 +71,7 @@ export default function About({ showButton = true }) {
                   }}
                 >
                   “ We believe every story <br />
-w                  <span className="text-[#5EA4A4]">deserves to be told ”</span>
+                  <span className="text-[#5EA4A4]">deserves to be told ”</span>
                 </p>
               </div>
 

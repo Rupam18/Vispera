@@ -45,7 +45,7 @@ export default function Testimonials({
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section id="testimonials" className={clsx('pb-8 md:pb-10 lg:pb-28 pt-0 overflow-hidden', className)} style={{ backgroundColor: '#F3F0EF' }}>
+    <section id="testimonials" className={clsx('pb-8 md:pb-10 lg:pb-12 pt-0 overflow-hidden', className)} style={{ backgroundColor: '#F3F0EF' }}>
       <div className="w-full">
         {/* Section Heading - Mobile */}
         <div className="lg:hidden mb-6 md:mb-8 px-6">
@@ -53,6 +53,7 @@ export default function Testimonials({
             subtitle="TESTIMONIALS"
             title="What Our Clients Say"
             align="center"
+            className="[&_h2]:text-[32px] [&_h2]:leading-[42px] [&_h2]:tracking-[0.02em] [&_h2]:font-semibold"
           />
         </div>
 
@@ -67,20 +68,20 @@ export default function Testimonials({
                 subtitle="TESTIMONIALS"
                 title="What Our Clients Say"
                 align="left"
-                className="[&_p]:text-secondary [&_h2]:text-white [&_h2]:text-2xl [&_h2]:lg:text-4xl [&_h2]:mb-1 relative z-10"
+                className="[&_p]:text-secondary [&_h2]:text-white [&_h2]:text-[32px] [&_h2]:leading-[42px] [&_h2]:tracking-[0.02em] [&_h2]:font-semibold [&_h2]:mb-1 relative z-10"
               />
               <div
                 className="absolute top-4 left-[220px] md:left-[260px] lg:left-[320px] w-12 h-12 z-0 pointer-events-none"
                 style={{
                   filter: "invert(61%) sepia(39%) saturate(420%) hue-rotate(131deg) brightness(150%) contrast(87%)",
-                  opacity: 2
+                  opacity: 1
                 }}
               >
                 <img src={headingBg} alt="" className="w-full h-full object-contain" />
               </div>
             </div>
             <p
-              className="text-white text-base leading-6 opacity-90 font-medium tracking-[0.02em] text-justify"
+              className="text-white text-base leading-[24px] opacity-90 font-normal tracking-normal capitalize"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               We Work Closely With Organizations To Craft Authentic Visual Stories That Connect, Inspire, And Create Meaningful Impact.

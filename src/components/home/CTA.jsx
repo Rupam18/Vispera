@@ -6,7 +6,7 @@ import cameraIllustration from "../../assets/images/about-us-camera.png";
 
 export default function CTA() {
   return (
-    <section className="relative overflow-hidden py-12 md:py-16">
+    <section className="relative overflow-hidden py-1 md:py-1">
       {/* Background with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -26,45 +26,48 @@ export default function CTA() {
         />
       </div>
 
-      <div className="w-full relative z-10 px-6 md:px-12 lg:px-20 max-w-[1440px] mx-auto">
-        <div className="flex flex-col items-center md:items-start text-center md:text-left gap-3 md:gap-2 lg:ml-12 xl:ml-20">
-          
-          {/* Text Content Area */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="flex-1 space-y-4 lg:space-y-6 flex flex-col items-center md:items-start"
-          >
-            <div className="relative inline-block mt-8 md:mt-2">
-              {/* Camera Illustration Area */}
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="absolute -top-10 -left-2 md:-top-12 md:-left-4 pointer-events-none z-0"
-              >
-                <img 
-                  src={cameraIllustration} 
-                  alt="" 
-                  className="w-12 md:w-16 lg:w-20 h-auto object-contain brightness-0 invert opacity-90" 
-                />
-              </motion.div>
+      <div className="container-custom relative z-10">
+        <div className="flex flex-col lg:flex-row items-center py-12 md:py-16">
+          {/* Left Column (50%) */}
+          <div className="w-full lg:w-1/2 flex flex-col items-center text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-[480px] space-y-6"
+            >
+              <div className="relative inline-block">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  className="absolute -top-12 left-0 pointer-events-none z-0"
+                >
+                  <img 
+                    src={cameraIllustration} 
+                    alt="" 
+                    className="w-12 md:w-16 h-auto object-contain brightness-0 invert opacity-60" 
+                  />
+                </motion.div>
 
-              <h2 className="text-3xl md:text-[40px] lg:text-3xl font-bold text-white font-heading leading-tight drop-shadow-md relative z-10 mx-auto w-fit">
-                Ready to tell your story?
-              </h2>
-            </div>
-            
-            <p className="text-white/80 text-sm md:text-base lg:text-lg font-medium leading-relaxed max-w-lg">
-              Whether you have a fully formed brief or just the seed of an idea, 
-              we'd love to hear from you.
-            </p>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-heading leading-tight relative z-10 drop-shadow-lg lg:whitespace-nowrap">
+                  Ready to tell your story?
+                </h2>
+              </div>
+              
+              <p className="text-white/90 text-base md:text-lg font-medium leading-relaxed drop-shadow-md">
+                Whether you have a fully formed brief or just the seed of an idea, 
+                we'd love to hear from you.
+              </p>
 
-            <div className="pt-2 md:pt-4 w-full flex justify-center md:justify-start">
-              <StartProjectButton />
-            </div>
-          </motion.div>
+              <div className="pt-4">
+                <StartProjectButton />
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Column (50% - Empty) */}
+          <div className="hidden lg:block lg:w-1/2" />
         </div>
       </div>
     </section>
