@@ -59,7 +59,7 @@ export default function FeaturedImpact() {
       <div className="w-full relative">
         {/* Header - Padded for readability */}
         <div className="text-center mb-8 px-6 relative w-full flex flex-col items-center">
-          <p 
+          <p
             className="text-[#5EA4A4] w-full text-center"
             style={{
               fontFamily: "'Inter', sans-serif",
@@ -74,7 +74,7 @@ export default function FeaturedImpact() {
             FEATURED IMPACT
           </p>
           <div className="relative inline-block mt-[-8px]">
-            <h3 
+            <h3
               className="text-[#0A374C] relative z-10 text-center"
               style={{
                 fontFamily: "'Playfair Display', serif",
@@ -115,7 +115,7 @@ export default function FeaturedImpact() {
                 {/* Image Area - Card Style */}
                 <div className="lg:col-span-6 relative">
                   {/* Badge */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-36 md:w-44 lg:w-48 pointer-events-none">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[48%] z-30 w-36 md:w-44 lg:w-48 pointer-events-none">
                     <img src={tagImg} alt="" className="w-full h-auto" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="text-white text-[8px] md:text-[10px] font-bold tracking-[0.2em] pb-1.5 md:pb-2">
@@ -161,7 +161,7 @@ export default function FeaturedImpact() {
                         <span className="text-white/90 text-sm md:text-base leading-relaxed">{story.location}</span>
                       </p>
                       <div className="pt-1">
-                        <p 
+                        <p
                           className="text-white/90 text-[15px] leading-[30px] font-semibold"
                           style={{
                             fontFamily: "'Inter', sans-serif",
@@ -177,7 +177,7 @@ export default function FeaturedImpact() {
                   </div>
 
                   <div className="mt-4 flex justify-center lg:justify-start pb-12 md:pb-0">
-                    <WatchVideoButton 
+                    <WatchVideoButton
                       onClick={() => window.open(story.link, "_blank", "noopener,noreferrer")}
                     />
                   </div>

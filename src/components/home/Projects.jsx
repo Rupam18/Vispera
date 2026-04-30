@@ -222,7 +222,7 @@ export default function Projects() {
                       key={project.id}
                       layout
                       onClick={() => {
-                        if (project.isExternal) {
+                        if (project.isExternal || project.id === 4) {
                           window.open(project.link, "_blank", "noopener,noreferrer");
                         } else {
                           setSelectedProject(project);
